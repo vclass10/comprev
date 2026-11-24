@@ -1,0 +1,2555 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Offline Stage 7 Computing revision: short lessons, mastery checks and a timed mock examination.">
+<title>Circuit | Stage 7 Computing</title>
+<style>
+:root{--bg:#f3f6fa;--surface:#fff;--surface2:#edf2f8;--ink:#182b43;--muted:#52647a;--border:#dbe3ed;--brand:#087d65;--brand-hover:#05634f;--brand-soft:#e0f4ec;--brand-ink:#075a49;--blue:#2354a3;--blue-soft:#e9effd;--amber:#885105;--amber-soft:#fff3d9;--red:#a42e39;--red-soft:#ffeaed;--sidebar:#10273d;--sidebar-muted:#b7c9db;--shadow:0 6px 24px #132c4810;--radius:18px;--code:#13263a;--code-text:#edf5ff;--focus:#ecaa1b;--side:276px;color-scheme:light}
+[data-theme=dark]{--bg:#0c1725;--surface:#142539;--surface2:#1c3047;--ink:#edf4fc;--muted:#b1c3d8;--border:#31465c;--brand:#52d8af;--brand-hover:#87ebc9;--brand-soft:#153e36;--brand-ink:#94f2d2;--blue:#a9c9ff;--blue-soft:#1c375b;--amber:#ffd28c;--amber-soft:#49371b;--red:#ffb3bf;--red-soft:#4a2735;--sidebar:#0b1e30;--sidebar-muted:#b7c9db;--shadow:0 6px 24px #0002;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;font-family:Inter,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.65}button,input,select{font:inherit}button,a,input,summary,select{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.6}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:4px}a{color:var(--brand-ink);text-underline-offset:3px}button{color:inherit}main:focus{outline:none}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(1.9rem,3.4vw,2.8rem);line-height:1.16;letter-spacing:-.045em;margin-bottom:16px}h2{font-size:1.45rem;letter-spacing:-.025em;line-height:1.3}h3{font-size:1.12rem;line-height:1.4}p:last-child{margin-bottom:0}ul,ol{padding-left:24px}small,.small{font-size:.875rem}code{font-family:"Cascadia Code",Consolas,monospace;background:var(--surface2);padding:2px 5px;border-radius:5px;font-size:.94em}pre{white-space:pre;overflow:auto;background:var(--code);color:var(--code-text);padding:22px;border-radius:12px;line-height:1.65;font-size:.95rem;tab-size:4}pre code{background:none;padding:0;color:inherit;display:block}.tok-key{color:#bcacff}.tok-str{color:#a8e2a5}.tok-num{color:#ffd080}.tok-fn{color:#8bdaff}.tok-comment{color:#a7bacd}button svg{width:20px;height:20px;vertical-align:middle;stroke:currentColor;fill:none;stroke-width:1.8}.skip{position:fixed;left:12px;top:-70px;z-index:100;background:var(--surface);padding:12px}.skip:focus{top:12px}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.sidebar{position:fixed;inset:0 auto 0 0;width:var(--side);background:var(--sidebar);color:#f4f8ff;z-index:40;display:flex;flex-direction:column;transition:transform .2s}.brand{padding:28px 24px 24px;display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}.brand-mark{width:40px;height:40px;border-radius:12px;background:#b9ef6c;color:#123c34;display:grid;place-items:center;font-size:29px;font-weight:800;line-height:1}.brand-name{font-size:1.5rem;font-weight:800;letter-spacing:-.06em}.brand-caption{font-size:.75rem;letter-spacing:.12em;color:var(--sidebar-muted);line-height:1.1;margin-top:3px}.nav-scroll{overflow-y:auto;padding:0 16px 20px;flex:1}.nav-main{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;color:#d5e4f2;text-decoration:none;font-weight:600;margin:4px 0}.nav-main.active{background:#254159;color:#fff}.nav-icon{font-size:19px;width:22px;text-align:center}.nav-label{font-size:.75rem;letter-spacing:.13em;color:#a4bbcf;margin:30px 14px 12px;font-weight:700}.unit-nav{border-bottom:1px solid #ffffff12;padding:8px 0}.unit-nav summary{cursor:pointer;list-style:none;display:flex;gap:10px;align-items:center;font-size:.91rem;padding:8px;color:#e9f3fd}.unit-nav summary::-webkit-details-marker{display:none}.unit-nav summary::after{content:'+';margin-left:auto;color:#9db7cc}.unit-nav[open] summary::after{content:'−'}.nav-lesson{display:flex;gap:10px;padding:9px 9px 9px 18px;color:#bdcfe0;border-radius:8px;text-decoration:none;font-size:.875rem;line-height:1.4;margin:3px 0}.nav-lesson:hover,.nav-lesson.active{background:#ffffff12;color:#fff}.nav-lesson.active{box-shadow:inset 3px 0 #b9ef6c}.nav-status{width:18px;flex:none;text-align:center}.mastered{color:var(--brand-ink)}.sidebar .mastered{color:#b9ef6c}.sidebar-footer{padding:18px 24px;border-top:1px solid #ffffff16;color:#b7c9db;font-size:.8rem}.sidebar-footer strong{display:block;color:#ecf7ff;font-size:.875rem}.shell{margin-left:var(--side);transition:margin-left .2s}.sidebar-hidden .sidebar{transform:translateX(-100%)}.sidebar-hidden .shell{margin-left:0}.topbar{position:sticky;top:0;z-index:30;background:var(--surface);border-bottom:1px solid var(--border);min-height:80px;padding:14px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px}.top-left,.top-actions,.metrics{display:flex;align-items:center;gap:16px}.breadcrumb{font-size:.9rem;color:var(--muted)}.icon-btn{background:var(--surface);border:1px solid var(--border);border-radius:10px;width:42px;height:42px;display:inline-grid;place-items:center;flex:none}.icon-btn:hover{background:var(--surface2)}.metrics{gap:22px}.metric{display:flex;align-items:center;gap:8px;font-size:.875rem;white-space:nowrap}.metric strong{font-size:1.05rem}.metric-icon{color:var(--brand-ink);font-size:20px}.mini-progress{width:68px;height:5px;background:var(--surface2);border-radius:5px;overflow:hidden}.mini-progress span{height:100%;display:block;background:var(--brand)}main{max-width:1350px;margin:0 auto;padding:36px 40px 70px;min-height:calc(100vh - 80px)}.eyebrow{font-size:.75rem;letter-spacing:.13em;font-weight:800;text-transform:uppercase;color:var(--brand-ink);margin-bottom:12px}.muted{color:var(--muted)}.lead{font-size:1.05rem;color:var(--muted);max-width:690px}.row{display:flex;align-items:center;justify-content:space-between;gap:16px}.wrap{flex-wrap:wrap}.stack{display:flex;flex-direction:column;gap:18px}.grid{display:grid;gap:22px}.two-col{grid-template-columns:repeat(2,minmax(0,1fr))}.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;border-radius:10px;background:var(--brand);color:#fff;text-decoration:none;padding:11px 19px;font-weight:700;line-height:1.4;min-height:44px}.btn:hover{background:var(--brand-hover)}[data-theme=dark] .btn{color:#092c23}.btn.secondary{background:var(--surface);border-color:var(--border);color:var(--ink)}.btn.secondary:hover{background:var(--surface2)}.btn.quiet{background:transparent;color:var(--brand-ink);padding-left:0;min-height:36px}.btn.danger{background:var(--red);color:var(--surface)}.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:6px;font-size:.76rem;font-weight:700;line-height:1.5;background:var(--surface2);color:var(--muted)}.pill.green{background:var(--brand-soft);color:var(--brand-ink)}.pill.amber{background:var(--amber-soft);color:var(--amber)}.pill.blue{background:var(--blue-soft);color:var(--blue)}.section-head{margin:34px 0 18px}.section-head h2{margin:0}.hero{background:linear-gradient(115deg,#14374e,#12575b);color:white;border-radius:22px;padding:32px 34px;display:grid;grid-template-columns:1.6fr 1fr;gap:24px;position:relative;overflow:hidden}.hero h1{max-width:560px}.hero .eyebrow{color:#c7f091}.hero p{color:#dfedf1;max-width:560px}.hero .btn{background:#c7f091;color:#15352c}.hero .btn:hover{background:#dcffb2}.hero .hero-meta{font-size:.875rem;color:#c8dfe4;margin:18px 0 0}.orbit{position:relative;display:flex;align-items:center;justify-content:center;min-height:220px}.orbit-ring{width:202px;height:202px;border:1px solid #d2ffeb4a;border-radius:50%;position:relative;display:grid;place-items:center;box-shadow:0 0 0 36px #ffffff05,0 0 0 70px #ffffff03}.orbit-core{width:122px;height:122px;border-radius:28px;transform:rotate(-7deg);background:#c7f091;color:#14394a;display:grid;place-items:center;font-size:3.7rem;font-weight:800;box-shadow:0 14px 32px #041e3233}.orbit-chip{position:absolute;width:49px;height:49px;display:grid;place-items:center;background:#e8f7ff;color:#234a63;border-radius:14px;font-size:1.5rem;font-weight:700;box-shadow:0 8px 20px #001b3622}.chip-a{top:-10px;left:6px;transform:rotate(-10deg)}.chip-b{bottom:4px;right:-15px;transform:rotate(10deg);background:#fee6a5}.chip-c{top:25px;right:-22px;background:#94dfce;transform:rotate(9deg)}.quick-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:20px}.quick-item{background:var(--surface);padding:19px 22px;display:flex;align-items:center;gap:14px}.quick-number{font-size:1.5rem;font-weight:800;letter-spacing:-.05em}.quick-item p{font-size:.875rem;margin:0;color:var(--muted)}.unit-card{padding:0;overflow:hidden}.unit-card-head{padding:24px 24px 20px;display:flex;gap:16px}.unit-tile{width:48px;height:48px;display:grid;place-items:center;flex:none;border-radius:14px;background:var(--brand-soft);color:var(--brand-ink);font-size:26px}.unit-card:nth-child(2) .unit-tile{background:var(--blue-soft);color:var(--blue)}.unit-card:nth-child(3) .unit-tile{background:var(--amber-soft);color:var(--amber)}.unit-card h3{margin:2px 0 5px}.unit-card .small{color:var(--muted);margin:0}.unit-list{list-style:none;padding:0 24px;margin:0}.lesson-link{display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;padding:13px 0;border-top:1px solid var(--border);font-size:.9rem}.lesson-link .lesson-time{margin-left:auto;white-space:nowrap;color:var(--muted);font-size:.78rem}.status-circle{width:25px;height:25px;flex:none;border:1.5px solid var(--border);border-radius:50%;display:grid;place-items:center;color:var(--muted);font-size:.8rem}.status-circle.done{background:var(--brand-soft);border-color:var(--brand);color:var(--brand-ink)}.status-circle.started{border-color:var(--blue);color:var(--blue);background:var(--blue-soft)}.checkpoint{margin:8px 0 0;padding:17px 24px;background:var(--surface2);display:flex;justify-content:space-between;align-items:center;gap:14px}.checkpoint a{font-size:.875rem;font-weight:700}.checkpoint small{color:var(--muted)}.study-tip{display:flex;gap:17px;padding:24px;margin-top:24px;background:var(--blue-soft);border:1px solid var(--border);border-radius:16px}.study-tip h3{margin-bottom:6px}.study-tip p{font-size:.92rem}.inline-icon{font-size:24px}.lesson-layout{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:24px;align-items:start}.lesson-side{position:sticky;top:104px}.lesson-side a{display:block;margin:12px 0;font-size:.875rem}.lesson-side h3{font-size:.95rem}.lesson-side .card{padding:20px}.lesson-heading{margin-bottom:26px}.lesson-heading h1{font-size:2.25rem}.lesson-heading .row{margin-bottom:18px}.objective-box{border-left:4px solid var(--brand);padding:16px 22px;background:var(--brand-soft);border-radius:0 12px 12px 0;margin-bottom:22px}.objective-box strong{color:var(--brand-ink)}.objective-box ul{margin:8px 0 0;font-size:.95rem}.concept-card{margin-bottom:18px;scroll-margin-top:105px}.concept-card h2{font-size:1.3rem}.concept-card.weak{border:2px solid var(--amber);background:linear-gradient(var(--amber-soft),var(--surface) 110px)}.weak-label{color:var(--amber);font-size:.8rem;font-weight:800;margin-bottom:10px}.callout{background:var(--brand-soft);color:var(--brand-ink);padding:16px 18px;border-radius:10px;margin:18px 0;font-size:.95rem}.table-wrap{overflow-x:auto;margin:18px 0}table{border-collapse:collapse;width:100%;font-size:.9rem;text-align:left;line-height:1.5}th{background:var(--surface2);font-weight:700}td,th{padding:12px 14px;border:1px solid var(--border);vertical-align:top}details>summary{cursor:pointer;font-weight:600}details>p{margin-top:12px}.recall{border-style:dashed;background:var(--surface)}.recall details{background:var(--surface2);padding:14px 16px;border-radius:9px}.shape-key{display:grid;grid-template-columns:1fr 1fr;gap:12px}.shape-key>div{padding:16px;text-align:center;background:var(--surface2);border-radius:12px}.shape-key p{margin:8px 0 0;font-size:.85rem;color:var(--muted)}.shape{display:flex;align-items:center;justify-content:center;min-height:44px;max-width:215px;padding:12px 20px;margin:0 auto;text-align:center;background:var(--blue-soft);border:2px solid var(--blue);color:var(--ink);font-size:.85rem;line-height:1.3;font-weight:650}.oval{border-radius:50px}.process{border-radius:3px}.io{clip-path:polygon(12% 0,100% 0,88% 100%,0 100%);padding-left:28px;padding-right:28px}.decision{clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);padding:30px 35px;min-height:94px;background:var(--amber-soft);border:0}.flowchart{max-width:500px;margin:20px auto;text-align:center}.flowchart>.shape{min-width:190px;width:max-content}.flow-link{display:block;color:var(--blue);font-size:22px;line-height:1.25}.flow-branches{display:grid;grid-template-columns:1fr 1fr;gap:25px;position:relative;border-bottom:2px solid var(--blue);padding-bottom:18px;margin:0 15px}.flow-branches>div{position:relative}.flow-branches>div:after{content:'';position:absolute;bottom:-18px;left:50%;height:18px;width:2px;background:var(--blue)}.flow-branches b{font-size:.85rem}.flow-merge{color:var(--blue)}.demo{border:1px solid var(--brand);background:var(--brand-soft);padding:22px;border-radius:16px;margin:18px 0}.demo h3{color:var(--brand-ink)}.demo label{font-weight:650;font-size:.9rem}.demo-output{font-size:1.05rem;font-weight:700;margin-top:16px;padding:12px;background:var(--surface);border-radius:9px}.demo input[type=number]{max-width:120px}.input{border:1px solid var(--border);background:var(--surface);color:var(--ink);padding:11px 12px;border-radius:9px;max-width:100%;min-height:46px}.bits{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-top:15px}.bit{border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--ink);padding:8px 3px}.bit[aria-pressed=true]{background:var(--brand);color:white}[data-theme=dark] .bit[aria-pressed=true]{color:#092c23}.bit span{font-size:.75rem;display:block}.bit strong{display:block;font-size:1.25rem}.quiz-block{margin-top:30px;border:2px solid var(--brand);padding:26px}.quiz-top{border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:20px}.quiz-top h2{margin-bottom:5px}.progress-track{height:7px;background:var(--surface2);border-radius:8px;overflow:hidden;margin:16px 0}.progress-fill{height:100%;background:var(--brand);transition:width .2s}.question-title{font-weight:700;font-size:1.17rem;line-height:1.55;margin:14px 0 20px}.choices{display:flex;flex-direction:column;gap:10px;border:0;padding:0;margin:0 0 20px}.choice{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1.5px solid var(--border);border-radius:12px;cursor:pointer;line-height:1.45;font-size:.96rem;background:var(--surface)}.choice:has(input:checked){border-color:var(--blue);background:var(--blue-soft)}.choice input{width:18px;height:18px;accent-color:var(--brand);flex:none}.choice.right{border-color:var(--brand);background:var(--brand-soft)}.choice.wrong{border-color:var(--red);background:var(--red-soft)}.feedback{padding:18px;border-radius:12px;margin:20px 0;background:var(--brand-soft);color:var(--brand-ink)}.feedback.incorrect{background:var(--amber-soft);color:var(--amber)}.feedback p{margin:8px 0 0;font-size:.95rem}.feedback a{color:inherit;font-weight:650}.form-error{color:var(--red);font-size:.875rem;margin-top:8px}.result-mark{width:80px;height:80px;display:grid;place-items:center;border-radius:50%;background:var(--brand-soft);color:var(--brand-ink);font-size:1.45rem;font-weight:800;margin-bottom:18px}.result-mark.needs{background:var(--amber-soft);color:var(--amber)}.weak-list{padding-left:22px}.review-item{padding:15px 0;border-top:1px solid var(--border)}.review-item summary{font-size:.95rem}.review-item p{font-size:.9rem;margin:10px 0}.report-score{font-size:3.6rem;line-height:1.1;font-weight:850;letter-spacing:-.06em}.report-hero{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:30px}.report-topics{margin-top:22px}.topic-row{display:grid;grid-template-columns:1fr 90px 100px;gap:12px;padding:13px 0;border-bottom:1px solid var(--border);align-items:center;font-size:.9rem}.topic-row a{font-weight:600}.topic-row span:last-child{text-align:right}.exam-shell{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:24px}.exam-nav{position:sticky;top:102px;align-self:start}.number-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:20px 0}.number-btn{height:36px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--ink);font-size:.85rem}.number-btn.answered{background:var(--brand-soft);border-color:var(--brand);color:var(--brand-ink)}.number-btn.current{outline:2px solid var(--blue);outline-offset:2px}.number-btn.flagged{border-bottom:4px solid var(--amber)}.timer{font-family:Consolas,monospace;font-size:2rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.05em}.timer.low{color:var(--red)}.exam-banner{background:var(--amber-soft);color:var(--amber);padding:12px 20px;border-bottom:1px solid var(--border);font-size:.875rem;display:flex;gap:14px;align-items:center;justify-content:center}.exam-banner a{color:inherit;font-weight:700}.flag{font-size:.85rem;padding:8px 11px;min-height:38px}.save-status{font-size:.8rem;color:var(--muted)}.notice{border-left:4px solid var(--amber);background:var(--amber-soft);color:var(--amber);padding:16px 20px;border-radius:8px;margin-bottom:20px}.badges{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}.badge-card{text-align:center;padding:24px 14px}.badge-icon{font-size:32px;background:var(--surface2);color:var(--muted);width:74px;height:74px;margin:0 auto 16px;display:grid;place-items:center;border-radius:24px;transform:rotate(-5deg)}.badge-card.earned .badge-icon{background:var(--brand-soft);color:var(--brand-ink);border:1px solid var(--brand)}.badge-card h3{font-size:.95rem;margin-bottom:8px}.badge-card p{font-size:.85rem;color:var(--muted)}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.stat-value{font-size:2rem;font-weight:800;line-height:1.2;margin:10px 0}.settings-block{margin:24px 0}.settings-block h2{font-size:1.2rem}.source-list{font-size:.9rem;overflow-wrap:anywhere}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:12px 22px;border-radius:12px;box-shadow:var(--shadow);z-index:80;max-width:90%;font-size:.9rem}.toast:empty{display:none}dialog{border:1px solid var(--border);background:var(--surface);color:var(--ink);border-radius:18px;padding:28px;width:min(500px,calc(100% - 36px));box-shadow:0 25px 100px #0005}dialog::backdrop{background:#071b30a3}dialog .row{margin-top:25px}.mobile-overlay{display:none}.help-inline{font-size:.85rem;color:var(--muted);margin-top:10px}.page-footer{text-align:center;font-size:.8rem;color:var(--muted);margin-top:34px}.sticky-submit{margin-top:16px}.history-row{display:flex;align-items:center;gap:18px;justify-content:space-between;border-bottom:1px solid var(--border);padding:16px 0}.hide{display:none!important}
+@media(min-width:1500px){main{padding-top:44px}.hero{padding:40px}.hero h1{font-size:3rem}}
+@media(max-width:1150px){:root{--side:246px}.topbar{padding:14px 24px}main{padding:28px 24px 60px}.metrics{gap:14px}.breadcrumb{display:none}.lesson-layout{grid-template-columns:minmax(0,1fr)}.lesson-side{display:none}.exam-shell{grid-template-columns:minmax(0,1fr) 210px}.hero{grid-template-columns:1.6fr .8fr;padding:28px}.orbit-ring{width:160px;height:160px}.orbit-core{width:100px;height:100px}.badges{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.sidebar{transform:translateX(-100%)}.shell,.sidebar-hidden .shell{margin-left:0}.nav-open .sidebar{transform:translateX(0)}.nav-open .mobile-overlay{display:block;position:fixed;inset:0;background:#001b3077;z-index:35}.topbar{min-height:72px}main{padding:26px 22px 60px}.exam-shell{grid-template-columns:minmax(0,1fr)}.exam-nav{position:static;order:-1}.exam-nav .number-grid{margin:15px 0;grid-template-columns:repeat(13,1fr)}.exam-nav .timer-row{display:flex;justify-content:space-between;align-items:center}.exam-nav .card{padding:18px}.exam-nav .sticky-submit{margin-top:8px}.quiz-block{scroll-margin-top:90px}}
+@media(max-width:640px){body{font-size:16px}.topbar{padding:10px 14px;gap:8px}.top-left{gap:6px}.metrics{gap:12px}.metric{gap:5px;font-size:.75rem}.metric strong{font-size:.95rem}.metric-icon{font-size:17px}.metric-label{display:none}.metric-course .mini-progress{width:40px}.top-actions{gap:8px}.icon-btn{width:37px;height:38px}.hero{grid-template-columns:1fr;padding:25px}.orbit{display:none}.hero h1{font-size:2.1rem}.two-col{grid-template-columns:1fr}main{padding:22px 15px 50px}.quick-strip{grid-template-columns:1fr}.quick-item{padding:12px 18px}.quick-number{font-size:1.15rem;min-width:40px}.quick-item p{display:inline}.section-head{align-items:flex-start}.section-head .small{max-width:140px;text-align:right}.card{padding:22px}.unit-card{padding:0}.unit-card-head{padding:22px}.unit-list{padding:0 22px}.lesson-link{font-size:.875rem}.lesson-time{display:none}.checkpoint{padding:16px 22px}.lesson-heading h1{font-size:1.85rem}.lesson-heading .row{align-items:flex-start}.quiz-block{padding:20px}.question-title{font-size:1.08rem}.report-hero{grid-template-columns:1fr;gap:16px}.topic-row{grid-template-columns:1fr 55px 85px;gap:8px;font-size:.85rem}.stat-grid{grid-template-columns:1fr}.badges{gap:12px}.badge-card{padding:18px 10px}.exam-nav .number-grid{grid-template-columns:repeat(9,1fr)}.exam-banner{font-size:.8rem;justify-content:space-between}.bits{gap:4px}.bit span{font-size:.7rem}.shape-key{gap:8px}.shape-key>div{padding:12px 5px}.shape{font-size:.75rem;min-width:0}.flow-branches{gap:12px;margin:0}.flowchart>.shape{min-width:155px}.flow-branches .io{padding:14px 22px}.row.actions{align-items:stretch;flex-wrap:wrap}.row.actions>*{flex:1;text-align:center;min-width:130px}pre{padding:16px;font-size:.85rem}.table-wrap{margin-left:-4px;margin-right:-4px}td,th{padding:10px}.history-row{align-items:flex-start;flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{.sidebar,.topbar,.exam-banner,.btn,.icon-btn,.mobile-overlay,.toast,.lesson-side{display:none!important}.shell{margin:0}main{padding:0;max-width:none}body{background:#fff;color:#111}.card{box-shadow:none;break-inside:avoid}.grid,.lesson-layout{display:block}.card{margin-bottom:15px}details{break-inside:avoid}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<aside class="sidebar" id="sidebar" aria-label="Course navigation"></aside>
+<div class="mobile-overlay" id="overlay" aria-hidden="true"></div>
+<div class="shell">
+<header class="topbar">
+ <div class="top-left"><button class="icon-btn" id="menu-btn" aria-label="Toggle course navigation" aria-controls="sidebar" aria-expanded="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><span class="breadcrumb">Your computing revision lab</span></div>
+ <div class="top-actions"><div class="metrics" id="metrics"></div><button class="icon-btn" id="theme-btn" aria-label="Switch to dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14A8 8 0 0 1 10 4a8 8 0 1 0 10 10Z"/></svg></button></div>
+</header>
+<div id="exam-banner"></div>
+<main id="main" tabindex="-1"></main>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<dialog id="confirm-dialog" aria-labelledby="dialog-title"><h2 id="dialog-title"></h2><p id="dialog-body"></p><div class="row"><button class="btn secondary" id="dialog-cancel">Cancel</button><button class="btn" id="dialog-confirm">Continue</button></div></dialog>
+<noscript><p style="padding:30px">Please enable JavaScript to use the revision lessons, quizzes and saved progress.</p></noscript>
+<script>
+const courseData = {
+  "id": "stage7-attached-v1",
+  "title": "Computing, one concept at a time.",
+  "stage": "Stage 7",
+  "version": 1,
+  "examMinutes": 45,
+  "sources": [
+    "G6_ICT_Revision_Guide(1).docx",
+    "G6_U1_Programming & Computational Thinking 1 - Unit Test.docx",
+    "G6_End of Unit 2 Quiz (Computer system).docx",
+    "G6_End of Unit 3 Quiz (Managing data).docx",
+    "EOS1_Grade 6 - Computing - Mark Scheme.pdf",
+    "EOS1_Grade_6_Computing_2025_ANS.pdf"
+  ],
+  "scope": "Built from the six supplied Grade 6 / Cambridge Stage 7 files. Networks & Digital Communication is not included because no notes for that unit were supplied. Practice questions apply the supplied concepts; this is a revision tool, not an official examination.",
+  "sections": [
+    {
+      "id": "thinking",
+      "title": "Computational Thinking",
+      "short": "Thinking",
+      "description": "Turn a problem into steps you can follow, draw and test.",
+      "icon": "◇",
+      "lessons": [
+        {
+          "id": "algorithms",
+          "title": "Algorithms & programming styles",
+          "summary": "A plan first. A program next.",
+          "minutes": 12,
+          "objectives": [
+            "Distinguish an algorithm from a program.",
+            "Compare block-based and text-based programming."
+          ],
+          "concepts": [
+            {
+              "id": "plan",
+              "title": "A clear plan",
+              "html": "<p>An <strong>algorithm</strong> is a clear, ordered set of steps for solving a problem. A <strong>program</strong> implements those steps in a language a computer can execute.</p><div class=\"callout\">The algorithm is the plan; the program is the implementation.</div><p>For a shop total: input the quantity, multiply it by the price, then output the total. Each instruction must be precise and in the right order.</p>"
+            },
+            {
+              "id": "styles",
+              "title": "Blocks and text",
+              "html": "<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Feature</th><th scope=\"col\">Block-based</th><th scope=\"col\">Text-based</th></tr></thead><tbody><tr><td>Instructions</td><td>Join visual blocks</td><td>Type instructions</td></tr><tr><td>Example</td><td>Scratch or MakeCode blocks</td><td>Python</td></tr><tr><td>Rules</td><td>Shapes prevent many syntax mistakes</td><td>Spelling, punctuation and structure matter</td></tr><tr><td>Errors</td><td>Logic errors are still possible</td><td>Syntax and logic errors are possible</td></tr></tbody></table></div><p>Both approaches use logical thinking, variables and testing. Neither automatically guarantees a correct solution.</p>"
+            },
+            {
+              "id": "constructs",
+              "title": "Three useful patterns",
+              "html": "<p><strong>Sequence:</strong> follow instructions in order. <strong>Selection:</strong> choose a route using a condition. <strong>Repetition:</strong> repeat instructions.</p><p>Example: input a score, test whether it is at least 60, and choose a message. The order is sequence; choosing the message is selection.</p>"
+            }
+          ],
+          "activity": "Write an algorithm in three steps to calculate the cost of 6 items at 4 units each. Then explain how a program differs from your plan.",
+          "activityAnswer": "Input quantity 6; calculate total = quantity × 4; output 24. A program writes these steps in executable instructions.",
+          "sources": [
+            0,
+            1
+          ],
+          "questions": [
+            {
+              "id": "algorithms-q1",
+              "concept": "plan",
+              "prompt": "Which description defines an algorithm?",
+              "explanation": "An algorithm describes the steps; it does not have to be written in Python.",
+              "type": "choice",
+              "options": [
+                "Ordered steps to solve a problem",
+                "A physical computer component",
+                "Only a Python file",
+                "An error message"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "algorithms-q2",
+              "concept": "plan",
+              "prompt": "Which description best fits a program?",
+              "explanation": "A program implements an algorithm in a language a computer can execute.",
+              "type": "choice",
+              "options": [
+                "Executable instructions in a programming language",
+                "A list of computer parts",
+                "A drawing of a keyboard",
+                "Only a spoken goal"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "algorithms-q3",
+              "concept": "styles",
+              "prompt": "Which is block-based?",
+              "explanation": "Scratch uses visual instruction blocks.",
+              "type": "choice",
+              "options": [
+                "Joining Scratch instruction blocks",
+                "Typing Python statements",
+                "Typing a spreadsheet title",
+                "Drawing a database table"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "algorithms-q4",
+              "concept": "styles",
+              "prompt": "True or false: block-based programs cannot have logic errors.",
+              "explanation": "The blocks can fit together but still describe the wrong steps.",
+              "type": "choice",
+              "options": [
+                "False",
+                "True"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "algorithms-q5",
+              "concept": "styles",
+              "prompt": "Which feature matters especially when typing Python?",
+              "explanation": "Text-based instructions must follow the language rules.",
+              "type": "choice",
+              "options": [
+                "Correct syntax and indentation",
+                "The colour of the computer",
+                "The size of a Scratch block",
+                "The number of open windows"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "algorithms-q6",
+              "concept": "constructs",
+              "prompt": "Instructions running in order use which construct?",
+              "explanation": "Sequence runs instructions in their specified order.",
+              "type": "choice",
+              "options": [
+                "Sequence",
+                "Selection",
+                "A primary key",
+                "Digitisation"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "algorithms-q7",
+              "concept": "constructs",
+              "prompt": "Choosing a message according to a score is an example of…",
+              "explanation": "Selection chooses a route according to a condition.",
+              "type": "choice",
+              "options": [
+                "Selection",
+                "Storage",
+                "A field",
+                "A byte"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "algorithms-q8",
+              "concept": "constructs",
+              "prompt": "Repeating an instruction three times is…",
+              "explanation": "Repetition runs an instruction or group of instructions more than once.",
+              "type": "choice",
+              "options": [
+                "Repetition",
+                "A single comparison",
+                "An output device",
+                "A record"
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "id": "flowcharts",
+          "title": "Build a flowchart",
+          "summary": "Choose symbols and connect the decisions.",
+          "minutes": 12,
+          "objectives": [
+            "Match flowchart symbols to their purposes.",
+            "Build connected paths for sequence and selection."
+          ],
+          "concepts": [
+            {
+              "id": "symbols",
+              "title": "The visual language",
+              "html": "<div class=\"shape-key\"><div><span class=\"shape oval\">Start / End</span><p>Terminator</p></div><div><span class=\"shape process\">Calculate</span><p>Process</p></div><div><span class=\"shape io\">Input / Output</span><p>Parallelogram</p></div><div><span class=\"shape decision\">Condition?</span><p>Diamond</p></div></div><p>A <strong>flowchart</strong> is an algorithm represented by symbols connected by arrows. Arrowheads show the direction of execution.</p>"
+            },
+            {
+              "id": "branches",
+              "title": "Make both routes clear",
+              "html": "<p>A decision has labelled <strong>Yes / No</strong> or <strong>True / False</strong> exits. For a single IF–ELSE decision, only one branch runs for each input.</p><div class=\"flowchart\"><div class=\"shape oval\">Start</div><span class=\"flow-link\" aria-hidden=\"true\">↓</span><div class=\"shape io\">Input temperature</div><span class=\"flow-link\" aria-hidden=\"true\">↓</span><div class=\"shape decision\">temperature ≥ 30?</div><div class=\"flow-branches\"><div><b>Yes ↓</b><div class=\"shape io\">Output Fan on</div></div><div><b>No ↓</b><div class=\"shape io\">Output Fan off</div></div></div><div class=\"flow-merge\" aria-hidden=\"true\">↓</div><div class=\"shape oval\">End</div></div>"
+            },
+            {
+              "id": "method",
+              "title": "Draw, then check",
+              "html": "<ol><li>Identify the inputs and outputs.</li><li>Identify calculations and conditions.</li><li>Select the correct symbols.</li><li>Connect each step with arrowheads.</li><li>Label the decision branches and connect them to the end.</li><li>Trace both routes.</li></ol><p>For triangle area, the calculation <code>area = base / 2 * height</code> belongs in a rectangle, followed by an output parallelogram.</p>"
+            }
+          ],
+          "activity": "On paper, draw a flowchart that inputs a score. Output “Pass” for a score of at least 60; otherwise output “Try again”.",
+          "activityAnswer": "Start → input score → decision score ≥ 60? Yes: output Pass. No: output Try again. Both paths reach End. Use a diamond for the condition and parallelograms for input/output.",
+          "sources": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "questions": [
+            {
+              "id": "flowcharts-q1",
+              "concept": "symbols",
+              "prompt": "Which symbol represents a calculation?",
+              "explanation": "Calculations and assignments are processing steps, represented by rectangles.",
+              "type": "choice",
+              "options": [
+                "Rectangle",
+                "Diamond",
+                "Parallelogram",
+                "Oval"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "flowcharts-q2",
+              "concept": "symbols",
+              "prompt": "Which symbol represents input or output?",
+              "explanation": "A parallelogram represents an input or an output.",
+              "type": "choice",
+              "options": [
+                "Parallelogram",
+                "Rectangle",
+                "Diamond",
+                "Oval"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "flowcharts-q3",
+              "concept": "symbols",
+              "prompt": "Which symbol represents a decision?",
+              "explanation": "A condition with alternative paths belongs in a diamond.",
+              "type": "choice",
+              "options": [
+                "Diamond",
+                "Oval",
+                "Triangle",
+                "Rectangle"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "flowcharts-q4",
+              "concept": "branches",
+              "prompt": "The ELSE route of a single IF–ELSE decision is the…",
+              "explanation": "ELSE runs when the IF condition is false.",
+              "type": "choice",
+              "options": [
+                "False / No branch",
+                "True / Yes branch",
+                "Start symbol",
+                "Input value"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "flowcharts-q5",
+              "concept": "branches",
+              "prompt": "What do the arrowheads show?",
+              "explanation": "Arrowheads make the order of execution clear.",
+              "type": "choice",
+              "options": [
+                "The direction in which steps are followed",
+                "The variable data types",
+                "The test score",
+                "The software category"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "flowcharts-q6",
+              "concept": "method",
+              "prompt": "Where should area = base / 2 * height appear?",
+              "explanation": "The calculation assigns the result to area, so it is a process.",
+              "type": "choice",
+              "options": [
+                "Inside a process rectangle",
+                "Inside the start oval",
+                "Only as a branch label",
+                "Outside every symbol"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "flowcharts-q7",
+              "concept": "branches",
+              "prompt": "For temperature ≥ 30, which route is followed at 30?",
+              "explanation": "The ≥ comparison includes equality, so 30 meets the condition.",
+              "type": "choice",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "flowcharts-q8",
+              "concept": "method",
+              "prompt": "Which is the best final check for a selection flowchart?",
+              "explanation": "Tracing both routes checks their outputs and connections.",
+              "type": "choice",
+              "options": [
+                "Trace both branches",
+                "Remove the end symbol",
+                "Use unlabelled decision exits",
+                "Replace all symbols with rectangles"
+              ],
+              "correct": 0
+            }
+          ],
+          "demo": "flow"
+        },
+        {
+          "id": "tracing",
+          "title": "Trace values & subroutines",
+          "summary": "Follow the steps, one value at a time.",
+          "minutes": 12,
+          "objectives": [
+            "Track variable changes and outputs.",
+            "Follow a subroutine and return to the main algorithm."
+          ],
+          "concepts": [
+            {
+              "id": "trace",
+              "title": "Trace the changing values",
+              "html": "<p>Work through instructions in order. Keep a short <strong>trace table</strong> of changed values. Only an output instruction displays a value.</p><pre><code class=\"python\">bookNum = 101\nbookNum = bookNum - 1\nprint(bookNum)</code></pre><p>The stored value becomes 100 and the output is 100. Assignment replaces the previous value.</p>"
+            },
+            {
+              "id": "subroutine",
+              "title": "Follow a named set of steps",
+              "html": "<p>A <strong>subroutine</strong> is a named group of instructions. When it is called, follow its steps, then return to the next instruction in the main algorithm. A predefined-process symbol is a rectangle with an extra vertical line near each side.</p><div class=\"callout\"><strong>Main:</strong> ten = 10; a = 5; call add; a = 7; call add.<br><strong>Subroutine add:</strong> total = ten + a; output total.</div><div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Call</th><th scope=\"col\">ten</th><th scope=\"col\">a</th><th scope=\"col\">Output</th></tr></thead><tbody><tr><td>First</td><td>10</td><td>5</td><td>15</td></tr><tr><td>Second</td><td>10</td><td>7</td><td>17</td></tr></tbody></table></div><p>This follows the supplied examination flowchart: each call uses the current value of <code>a</code>.</p>"
+            },
+            {
+              "id": "repeat",
+              "title": "Keep the output separate",
+              "html": "<p>If total starts at 0 and <code>total = total + 2</code> repeats three times, the successive values are 2, 4 and 6. If there is only one output after the repetition, only 6 is displayed.</p><div class=\"callout\">Changed values are not automatically outputs. Locate the output instruction.</div>"
+            }
+          ],
+          "activity": "Change a to 9 before the second call to add. Predict both outputs. Explain why the second output changes.",
+          "activityAnswer": "15, then 19. The second call uses the current a = 9, so total = 10 + 9.",
+          "sources": [
+            0,
+            4,
+            5
+          ],
+          "questions": [
+            {
+              "id": "tracing-q1",
+              "concept": "trace",
+              "prompt": "What is output?",
+              "explanation": "The value 101 is reduced by 1 before it is displayed.",
+              "type": "text",
+              "answers": [
+                "100"
+              ],
+              "code": "bookNum = 101\nbookNum = bookNum - 1\nprint(bookNum)"
+            },
+            {
+              "id": "tracing-q2",
+              "concept": "trace",
+              "prompt": "Does every assignment display its new value?",
+              "explanation": "An assignment changes a stored value. An output instruction displays it.",
+              "type": "choice",
+              "options": [
+                "No",
+                "Yes"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "tracing-q3",
+              "concept": "subroutine",
+              "prompt": "After a subroutine finishes, what happens?",
+              "explanation": "Execution continues after the call in the main algorithm.",
+              "type": "choice",
+              "options": [
+                "Execution returns to the next main instruction",
+                "The entire program always stops",
+                "Every variable becomes zero",
+                "The first input always repeats"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "tracing-q4",
+              "concept": "subroutine",
+              "prompt": "The add subroutine outputs ten + a. If ten = 10 and a = 5, what is output?",
+              "explanation": "10 + 5 = 15.",
+              "type": "text",
+              "answers": [
+                "15"
+              ]
+            },
+            {
+              "id": "tracing-q5",
+              "concept": "subroutine",
+              "prompt": "The add subroutine is called again with ten = 10 and a = 7. What is output?",
+              "explanation": "The second call uses a = 7, so 10 + 7 = 17.",
+              "type": "text",
+              "answers": [
+                "17"
+              ]
+            },
+            {
+              "id": "tracing-q6",
+              "concept": "repeat",
+              "prompt": "total starts at 0 and increases by 2 three times. What is its final value?",
+              "explanation": "The successive values are 2, 4 and 6.",
+              "type": "text",
+              "answers": [
+                "6"
+              ]
+            },
+            {
+              "id": "tracing-q7",
+              "concept": "repeat",
+              "prompt": "Only one output follows the three additions. Which values are displayed?",
+              "explanation": "Intermediate assignments are not displayed unless there is an output instruction.",
+              "type": "choice",
+              "options": [
+                "Only 6",
+                "2, 4 and 6",
+                "Only 2",
+                "Nothing"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "tracing-q8",
+              "concept": "trace",
+              "prompt": "What should a trace record?",
+              "explanation": "Recording values step by step helps predict the result accurately.",
+              "type": "choice",
+              "options": [
+                "Values as instructions change them",
+                "Only the programme title",
+                "Only variable names without values",
+                "The colour of the flowchart"
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "id": "prototypes",
+          "title": "Prototypes & project plans",
+          "summary": "Define success before you build.",
+          "minutes": 12,
+          "objectives": [
+            "Explain the purpose of a prototype and project plan.",
+            "Link multiple inputs to planned outputs."
+          ],
+          "concepts": [
+            {
+              "id": "prototype",
+              "title": "Try an early version",
+              "html": "<p>A <strong>prototype</strong> is an early version used to test usefulness, design and functionality before the final product. Evaluation helps identify problems and improvements.</p><p>For a burglar alarm prototype, check whether sensor inputs produce the intended lights or sound. A working appearance alone is not enough.</p>"
+            },
+            {
+              "id": "plan",
+              "title": "Plan the goal and the checks",
+              "html": "<p>A <strong>project plan</strong> states the objective and describes how the prototype will be tested. A clear goal gives you something to evaluate.</p><div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Part</th><th scope=\"col\">Alarm example</th></tr></thead><tbody><tr><td>Goal</td><td>Warn when movement is detected in low light</td></tr><tr><td>Inputs</td><td>Light level and movement readings</td></tr><tr><td>Outputs</td><td>Warning light or alarm sound</td></tr><tr><td>Testing</td><td>Supply different input combinations and compare expected and actual output</td></tr></tbody></table></div><p>The supplied assessment focuses on objectives and testing, rather than a shopping list of software suppliers.</p>"
+            },
+            {
+              "id": "physical",
+              "title": "Use more than one input",
+              "html": "<p>A physical computing device can use multiple inputs to choose outputs. Read the full rule before choosing an output.</p><div class=\"callout\"><strong>Practice rule:</strong> if movement &gt; 25, output Alarm. Otherwise output Quiet.</div><p>Input 50 gives Alarm; input 10 gives Quiet. Test values on both routes. The more complex source alarm also uses light levels and different light outputs.</p>"
+            }
+          ],
+          "activity": "Plan a prototype that uses a movement sensor. Give one goal, two test inputs and the expected outputs using the practice rule.",
+          "activityAnswer": "Goal: warn when movement is above 25. Test 50 → Alarm; test 10 → Quiet. Evaluate by comparing each actual output with its expected output.",
+          "sources": [
+            4,
+            5
+          ],
+          "questions": [
+            {
+              "id": "prototypes-q1",
+              "concept": "prototype",
+              "prompt": "Why build a prototype?",
+              "explanation": "A prototype allows features and usefulness to be evaluated before final production.",
+              "type": "choice",
+              "options": [
+                "To test an early version and find problems",
+                "To avoid testing the product",
+                "To guarantee there are no errors",
+                "Only to advertise it"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "prototypes-q2",
+              "concept": "plan",
+              "prompt": "Which belongs in a project plan?",
+              "explanation": "The supplied project-plan objectives include the goal and testing approach.",
+              "type": "choice",
+              "options": [
+                "The objective and how testing will be done",
+                "Only a list of software shops",
+                "Only the final colour",
+                "Only an advertising slogan"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "prototypes-q3",
+              "concept": "prototype",
+              "prompt": "Which gives useful evidence for evaluating an alarm prototype?",
+              "explanation": "Evaluation compares the behaviour with the intended goal.",
+              "type": "choice",
+              "options": [
+                "Whether each sensor input gives the intended output",
+                "Its name alone",
+                "The number of pages in the plan",
+                "The colour of the test sheet"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "prototypes-q4",
+              "concept": "physical",
+              "prompt": "Which is an input for the alarm?",
+              "explanation": "A sensor reading supplies data; sound and lights are outputs.",
+              "type": "choice",
+              "options": [
+                "Movement sensor reading",
+                "Alarm sound",
+                "Warning light",
+                "Printed result"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "prototypes-q5",
+              "concept": "physical",
+              "prompt": "Which is an output from the alarm?",
+              "explanation": "A warning light communicates the device’s result.",
+              "type": "choice",
+              "options": [
+                "Warning light",
+                "Light-level reading",
+                "Movement reading",
+                "The test input number"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "prototypes-q6",
+              "concept": "physical",
+              "prompt": "With movement > 25 producing Alarm, what does movement = 50 produce?",
+              "explanation": "50 is greater than 25, so the Alarm route runs.",
+              "type": "choice",
+              "options": [
+                "Alarm",
+                "Quiet"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "prototypes-q7",
+              "concept": "physical",
+              "prompt": "With movement > 25 producing Alarm, what does movement = 10 produce?",
+              "explanation": "10 is not greater than 25, so the other route runs.",
+              "type": "choice",
+              "options": [
+                "Quiet",
+                "Alarm"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "prototypes-q8",
+              "concept": "plan",
+              "prompt": "Which pair best checks both routes of movement > 25?",
+              "explanation": "10 takes the false route; 50 takes the true route.",
+              "type": "choice",
+              "options": [
+                "10 and 50",
+                "40 and 50",
+                "5 and 10",
+                "60 and 70"
+              ],
+              "correct": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "title": "Python Programming",
+      "short": "Python",
+      "description": "Read code, predict outputs and fix mistakes.",
+      "icon": "⌘",
+      "lessons": [
+        {
+          "id": "types",
+          "title": "Variables & data types",
+          "summary": "Choose a type that matches the value.",
+          "minutes": 12,
+          "objectives": [
+            "Recognise integer, real, string and Boolean values.",
+            "Explain assignment and changing variables."
+          ],
+          "concepts": [
+            {
+              "id": "types",
+              "title": "Match the value to its purpose",
+              "html": "<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Type</th><th scope=\"col\">Meaning</th><th scope=\"col\">Example</th></tr></thead><tbody><tr><td>Integer</td><td>Whole number</td><td>12 or -3</td></tr><tr><td>Real / float</td><td>Can represent fractional values</td><td>2.75 or 4.0</td></tr><tr><td>String / text</td><td>Sequence of characters</td><td>\"Ama\", \"007\"</td></tr><tr><td>Boolean</td><td>Logical value</td><td>True or False</td></tr><tr><td>Date</td><td>Calendar date in a database</td><td>23 November 2026</td></tr></tbody></table></div><p>Digits can be text. Telephone numbers and IDs are identifiers, not quantities for calculation. A string preserves leading zeros.</p>"
+            },
+            {
+              "id": "variable",
+              "title": "Store and update",
+              "html": "<p>A <strong>variable</strong> is a named storage location whose value can change while the program runs. In Python, <code>=</code> assigns a value.</p><pre><code class=\"python\">score = 5\nscore = score + 2\nprint(score)</code></pre><p>First score stores 5. The next line uses the old value to calculate 7, then stores 7.</p>"
+            },
+            {
+              "id": "quotes",
+              "title": "Numbers or characters?",
+              "html": "<pre><code class=\"python\">print(6 + 3)\nprint(&quot;6&quot; + &quot;3&quot;)</code></pre><p>The first output is 9. The second is 63 because <code>+</code> joins the strings. Quotation marks change how a value is interpreted.</p><div class=\"callout\">A value written as <code>\"123\"</code> is a string until converted.</div>"
+            }
+          ],
+          "activity": "Choose data types for a pupil count, mass 2.6 kg, code \"006\" and a permission granted flag.",
+          "activityAnswer": "Integer; real/float; string/text; Boolean.",
+          "sources": [
+            0,
+            4,
+            5
+          ],
+          "questions": [
+            {
+              "id": "types-q1",
+              "concept": "types",
+              "prompt": "Which type suits the number of pupils?",
+              "explanation": "A pupil count is a whole-number quantity.",
+              "type": "choice",
+              "options": [
+                "Integer",
+                "String",
+                "Boolean",
+                "Date"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "types-q2",
+              "concept": "types",
+              "prompt": "Which type suits a measured mass of 2.6 kg?",
+              "explanation": "A real/float type can represent fractional values.",
+              "type": "choice",
+              "options": [
+                "Real / float",
+                "Integer",
+                "Boolean",
+                "Date"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "types-q3",
+              "concept": "types",
+              "prompt": "Which type best preserves the code 006?",
+              "explanation": "A code is an identifier; text preserves the leading zeros.",
+              "type": "choice",
+              "options": [
+                "String",
+                "Integer",
+                "Boolean",
+                "Real / float"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "types-q4",
+              "concept": "types",
+              "prompt": "Which type stores True or False?",
+              "explanation": "Boolean values have two logical states: True and False.",
+              "type": "choice",
+              "options": [
+                "Boolean",
+                "Integer",
+                "String",
+                "Date"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "types-q5",
+              "concept": "variable",
+              "prompt": "What is output?",
+              "explanation": "score changes from 5 to 7 before print runs.",
+              "type": "text",
+              "answers": [
+                "7"
+              ],
+              "code": "score = 5\nscore = score + 2\nprint(score)"
+            },
+            {
+              "id": "types-q6",
+              "concept": "quotes",
+              "prompt": "What is output?",
+              "explanation": "Both operands are strings, so + joins the characters.",
+              "type": "text",
+              "answers": [
+                "63"
+              ],
+              "code": "print(\"6\" + \"3\")"
+            },
+            {
+              "id": "types-q7",
+              "concept": "variable",
+              "prompt": "In Python, = is used to…",
+              "explanation": "A single equals sign assigns. A double equals sign compares.",
+              "type": "choice",
+              "options": [
+                "Assign a value",
+                "Test equality",
+                "End a program",
+                "Draw a flowchart"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "types-q8",
+              "concept": "types",
+              "prompt": "What is the type of \"123\"?",
+              "explanation": "Quotation marks make this a string of characters.",
+              "type": "choice",
+              "options": [
+                "String",
+                "Integer",
+                "Boolean",
+                "Real / float"
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "id": "io",
+          "title": "Input, output & arithmetic",
+          "summary": "Turn user input into a useful result.",
+          "minutes": 12,
+          "objectives": [
+            "Use input(), int(), float() and print().",
+            "Predict arithmetic and string outputs."
+          ],
+          "concepts": [
+            {
+              "id": "functions",
+              "title": "Read, convert, display",
+              "html": "<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Function</th><th scope=\"col\">Purpose</th></tr></thead><tbody><tr><td>input()</td><td>Read user input as text</td></tr><tr><td>int()</td><td>Convert suitable text to an integer</td></tr><tr><td>float()</td><td>Convert suitable text to a real number</td></tr><tr><td>print()</td><td>Display an output</td></tr></tbody></table></div><pre><code class=\"python\">quantity = int(input(&quot;How many? &quot;))\ntotal = quantity * 4\nprint(total)</code></pre><p>For input 6, the output is 24. The conversion allows integer arithmetic.</p>"
+            },
+            {
+              "id": "arithmetic",
+              "title": "Calculate in order",
+              "html": "<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Operator</th><th scope=\"col\">Meaning</th></tr></thead><tbody><tr><td>+</td><td>Add numbers</td></tr><tr><td>-</td><td>Subtract</td></tr><tr><td>*</td><td>Multiply</td></tr><tr><td>/</td><td>Divide</td></tr></tbody></table></div><p>Use brackets to control the order. A triangle’s area can be calculated with <code>base / 2 * height</code>. In Python, <code>12 / 4</code> produces <code>3.0</code>.</p>"
+            },
+            {
+              "id": "output",
+              "title": "Read quotation marks carefully",
+              "html": "<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Code</th><th scope=\"col\">Output</th></tr></thead><tbody><tr><td>print(7 + 2)</td><td>9</td></tr><tr><td>print(\"7\" + \"2\")</td><td>72</td></tr><tr><td>print(\"7 + 2\")</td><td>7 + 2</td></tr></tbody></table></div><p>Text inside quotes is displayed as text. It is not calculated as an arithmetic expression.</p>"
+            }
+          ],
+          "activity": "Without running it, predict the output of x = \"123\" followed by print(int(x) + 1). Then explain the role of int().",
+          "activityAnswer": "124. int() converts the suitable string \"123\" to the integer 123 before adding 1.",
+          "sources": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "questions": [
+            {
+              "id": "io-q1",
+              "concept": "functions",
+              "prompt": "Which function reads keyboard input?",
+              "explanation": "input() reads the user’s entered text.",
+              "type": "choice",
+              "options": [
+                "input()",
+                "print()",
+                "int()",
+                "float()"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "io-q2",
+              "concept": "functions",
+              "prompt": "What type does input() return before conversion?",
+              "explanation": "input() returns text even when the user types digits.",
+              "type": "choice",
+              "options": [
+                "String",
+                "Integer automatically",
+                "Boolean automatically",
+                "Date automatically"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "io-q3",
+              "concept": "functions",
+              "prompt": "What is output?",
+              "explanation": "int(\"123\") gives 123; adding 1 gives 124.",
+              "type": "text",
+              "answers": [
+                "124"
+              ],
+              "code": "x = \"123\"\nprint(int(x) + 1)"
+            },
+            {
+              "id": "io-q4",
+              "concept": "arithmetic",
+              "prompt": "What is output?",
+              "explanation": "5 divided by 2 is 2.5.",
+              "type": "text",
+              "answers": [
+                "2.5"
+              ],
+              "code": "x = 5\ny = 2\nprint(x / y)"
+            },
+            {
+              "id": "io-q5",
+              "concept": "arithmetic",
+              "prompt": "Which operator multiplies numbers in Python?",
+              "explanation": "The asterisk * is Python’s multiplication operator.",
+              "type": "choice",
+              "options": [
+                "*",
+                "x",
+                ":",
+                "^"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "io-q6",
+              "concept": "output",
+              "prompt": "What is output?",
+              "explanation": "The characters inside quotation marks are printed without arithmetic.",
+              "type": "text",
+              "answers": [
+                "7 + 2"
+              ],
+              "code": "print(\"7 + 2\")"
+            },
+            {
+              "id": "io-q7",
+              "concept": "functions",
+              "prompt": "Which conversion is suitable for text \"2.75\" when a decimal value is needed?",
+              "explanation": "float() converts suitable text to a real number.",
+              "type": "choice",
+              "options": [
+                "float(\"2.75\")",
+                "int(\"2.75\")",
+                "print(\"2.75\")",
+                "input(\"2.75\")"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "io-q8",
+              "concept": "arithmetic",
+              "prompt": "For base = 8 and height = 3, what value does base / 2 * height calculate?",
+              "explanation": "8 / 2 × 3 = 12. Python represents this result as 12.0.",
+              "type": "text",
+              "answers": [
+                "12",
+                "12.0"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "selection",
+          "title": "Comparisons & selection",
+          "summary": "Choose the right route through code.",
+          "minutes": 12,
+          "objectives": [
+            "Interpret all six supplied comparison operators.",
+            "Trace if, elif, else and combined conditions."
+          ],
+          "concepts": [
+            {
+              "id": "operators",
+              "title": "Ask a precise question",
+              "html": "<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Operator</th><th scope=\"col\">Meaning</th></tr></thead><tbody><tr><td>< / ></td><td>Less than / greater than</td></tr><tr><td><= / >=</td><td>Less than or equal / greater than or equal</td></tr><tr><td>==</td><td>Equal to</td></tr><tr><td>!=</td><td>Not equal to</td></tr></tbody></table></div><p>A comparison produces a Boolean result. <code>8 &gt;= 8</code> is True; <code>8 != 8</code> is False.</p>"
+            },
+            {
+              "id": "selection",
+              "title": "Indent the chosen statements",
+              "html": "<pre><code class=\"python\">num = int(input(&quot;Guess a number: &quot;))\nif num == 42:\n    print(&quot;Correct!&quot;)\nelse:\n    print(&quot;Wrong number&quot;)</code></pre><p>A colon ends the <code>if</code> and <code>else</code> headers. Indented statements belong to the branch. In an IF–ELSE, the matching branch runs.</p>"
+            },
+            {
+              "id": "elif",
+              "title": "Check conditions in order",
+              "html": "<pre><code class=\"python\">x = 20\nif x &lt; 10:\n    print(&quot;Small&quot;)\nelif x &lt; 30:\n    print(&quot;Medium&quot;)\nelse:\n    print(&quot;Large&quot;)</code></pre><p>The first condition is False; the second is True, so the output is Medium. In this chain, the later branch does not also run.</p><p><code>x &lt; y and y == 10</code> needs both conditions to be True. <code>or</code> needs at least one; <code>not</code> reverses a truth value.</p>"
+            }
+          ],
+          "activity": "In the Small/Medium/Large code, predict the output for x = 5, x = 20 and x = 30.",
+          "activityAnswer": "Small; Medium; Large. At 30, both x < 10 and x < 30 are False.",
+          "sources": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "questions": [
+            {
+              "id": "selection-q1",
+              "concept": "operators",
+              "prompt": "Which operator tests equality in Python?",
+              "explanation": "== tests equality; = assigns a value.",
+              "type": "choice",
+              "options": [
+                "==",
+                "=",
+                "!=",
+                "=>"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "selection-q2",
+              "concept": "operators",
+              "prompt": "What is 8 != 8?",
+              "explanation": "!= means not equal to. The two values are equal.",
+              "type": "choice",
+              "options": [
+                "False",
+                "True"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "selection-q3",
+              "concept": "operators",
+              "prompt": "Which condition means “at least 60”?",
+              "explanation": "At least includes 60 itself, so use >=.",
+              "type": "choice",
+              "options": [
+                "score >= 60",
+                "score > 60",
+                "score < 60",
+                "score != 60"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "selection-q4",
+              "concept": "selection",
+              "prompt": "What is output?",
+              "explanation": "10 > 5 is True, so the first branch runs.",
+              "type": "text",
+              "answers": [
+                "Big"
+              ],
+              "code": "x = 10\nif x > 5:\n    print(\"Big\")\nelse:\n    print(\"Small\")"
+            },
+            {
+              "id": "selection-q5",
+              "concept": "elif",
+              "prompt": "What is output?",
+              "explanation": "20 < 10 is False, but 20 < 30 is True.",
+              "type": "text",
+              "answers": [
+                "Medium"
+              ],
+              "code": "x = 20\nif x < 10:\n    print(\"Small\")\nelif x < 30:\n    print(\"Medium\")\nelse:\n    print(\"Large\")"
+            },
+            {
+              "id": "selection-q6",
+              "concept": "elif",
+              "prompt": "What is output?",
+              "explanation": "5 < 10 and 10 == 10 are both True.",
+              "type": "text",
+              "answers": [
+                "Correct"
+              ],
+              "code": "x = 5\ny = 10\nif x < y and y == 10:\n    print(\"Correct\")\nelse:\n    print(\"Wrong\")"
+            },
+            {
+              "id": "selection-q7",
+              "concept": "selection",
+              "prompt": "What shows that print belongs inside an if branch?",
+              "explanation": "Indentation groups the statements controlled by the branch.",
+              "type": "choice",
+              "options": [
+                "Indentation",
+                "Capital letters everywhere",
+                "A trailing full stop",
+                "Quotation marks around if"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "selection-q8",
+              "concept": "selection",
+              "prompt": "With if num == 42, which input selects the True branch?",
+              "explanation": "The condition is True only when num equals 42.",
+              "type": "text",
+              "answers": [
+                "42"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "debug",
+          "title": "Test plans & debugging",
+          "summary": "Find the cause, fix it, test again.",
+          "minutes": 12,
+          "objectives": [
+            "Distinguish expected and actual results.",
+            "Recognise syntax, logic and runtime errors."
+          ],
+          "concepts": [
+            {
+              "id": "testing",
+              "title": "Check what should happen",
+              "html": "<p><strong>Testing</strong> checks behaviour. <strong>Test data</strong> are the inputs used. Write the expected result before running the program; record the actual result afterwards.</p><div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Input for movement > 25</th><th scope=\"col\">Expected output</th><th scope=\"col\">Actual output</th><th scope=\"col\">Result</th></tr></thead><tbody><tr><td>10</td><td>Quiet</td><td>Not yet run</td><td>Pending</td></tr><tr><td>50</td><td>Alarm</td><td>Not yet run</td><td>Pending</td></tr></tbody></table></div><p>A test passes when actual and expected behaviour match. A complete plan records the test purpose, input, expected output, actual output and pass/fail.</p><details><summary>Additional test-data vocabulary in the supplied revision guide</summary><p>Normal data are typical valid inputs. Invalid data break a rule. Boundary data lie at or near limits. Extreme valid values are the smallest and largest accepted values. The supplied exam schemes do not require these labels; their core task is testing both routes with correct expected results.</p></details>"
+            },
+            {
+              "id": "errors",
+              "title": "Name the problem",
+              "html": "<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Error</th><th scope=\"col\">Example</th><th scope=\"col\">Correction</th></tr></thead><tbody><tr><td>Syntax</td><td>Missing closing bracket or quote</td><td>Restore the missing punctuation</td></tr><tr><td>Logic</td><td>Using + instead of * for area</td><td>Use the correct calculation</td></tr><tr><td>Runtime</td><td>Dividing by zero during execution</td><td>Check the divisor before division</td></tr></tbody></table></div><p>A logic error can let code run while producing the wrong answer. A syntax error breaks the language rules.</p>"
+            },
+            {
+              "id": "routine",
+              "title": "Debug systematically",
+              "html": "<p><strong>Debugging</strong> means finding and fixing errors.</p><ol><li>Reproduce the problem.</li><li>Read the message or trace the values.</li><li>Find and correct the cause.</li><li>Rerun the failed test and other relevant tests.</li></ol><pre><code class=\"python\">num = int(input(&quot;Guess a number: &quot;))\nif num == 42:\n    print(&quot;Correct!&quot;)\nelse:\n    print(&quot;Wrong number&quot;)</code></pre><p>Check paired brackets, quotation marks, comparison operators, colons and indentation.</p>"
+            }
+          ],
+          "activity": "A program should display Alarm for input 50 but displays Quiet. Record expected and actual output, decide pass/fail, and describe your next step.",
+          "activityAnswer": "Expected: Alarm. Actual: Quiet. Fail. Trace the condition and branches, correct the cause, then rerun this test and a test for the other route.",
+          "sources": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "questions": [
+            {
+              "id": "debug-q1",
+              "concept": "testing",
+              "prompt": "When should the expected output be worked out?",
+              "explanation": "Expected output states what should happen and must not simply copy the observed result.",
+              "type": "choice",
+              "options": [
+                "Before running the test",
+                "Only after seeing the actual result",
+                "Only if the test passes",
+                "Never"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "debug-q2",
+              "concept": "testing",
+              "prompt": "Expected is Alarm; actual is Quiet. What is the result?",
+              "explanation": "The actual behaviour does not match the expected behaviour.",
+              "type": "choice",
+              "options": [
+                "Fail",
+                "Pass"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "debug-q3",
+              "concept": "errors",
+              "prompt": "A missing closing bracket is which kind of error?",
+              "explanation": "A missing bracket breaks the grammar of the language.",
+              "type": "choice",
+              "options": [
+                "Syntax",
+                "Logic",
+                "Runtime only",
+                "A data type"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "debug-q4",
+              "concept": "errors",
+              "prompt": "Using + instead of * to calculate rectangle area is a…",
+              "explanation": "The statement may run but implements the wrong calculation.",
+              "type": "choice",
+              "options": [
+                "Logic error",
+                "Syntax error",
+                "Primary key error",
+                "Correct calculation"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "debug-q5",
+              "concept": "errors",
+              "prompt": "An error from 10 / 0 occurs…",
+              "explanation": "Division by zero causes an error during execution.",
+              "type": "choice",
+              "options": [
+                "At runtime",
+                "Only when naming the file",
+                "Only in a flowchart",
+                "Because 10 is a string"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "debug-q6",
+              "concept": "routine",
+              "prompt": "After correcting an error, what should you do?",
+              "explanation": "Retesting verifies the fix and checks that relevant behaviour still works.",
+              "type": "choice",
+              "options": [
+                "Rerun the failed test and relevant other tests",
+                "Assume every test will pass",
+                "Delete the test plan",
+                "Change expected output to the wrong answer"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "debug-q7",
+              "concept": "testing",
+              "prompt": "Which pair tests both outputs for movement > 25?",
+              "explanation": "10 is on the false route and 50 on the true route.",
+              "type": "choice",
+              "options": [
+                "10 and 50",
+                "30 and 40",
+                "5 and 10",
+                "60 and 70"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "debug-q8",
+              "concept": "routine",
+              "prompt": "What is wrong here?",
+              "explanation": "The prompt is a string, so it needs quotation marks.",
+              "type": "choice",
+              "options": [
+                "The input prompt needs quotation marks",
+                "The variable must be a number",
+                "input must always be print",
+                "Nothing"
+              ],
+              "correct": 0,
+              "code": "name = input(Type your name: )"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "title": "Managing Data",
+      "short": "Data",
+      "description": "Collect, organise and explore useful information.",
+      "icon": "▦",
+      "lessons": [
+        {
+          "id": "models",
+          "title": "Models & simulators",
+          "summary": "Ask “what if?” without changing the real world.",
+          "minutes": 12,
+          "objectives": [
+            "Distinguish data, models, simulators and industries.",
+            "Explain real-time interaction and uses in industry."
+          ],
+          "concepts": [
+            {
+              "id": "terms",
+              "title": "Four key terms",
+              "html": "<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Term</th><th scope=\"col\">Meaning</th></tr></thead><tbody><tr><td>Data</td><td>Facts, measurements or observations</td></tr><tr><td>Model</td><td>A simplified representation using data and rules</td></tr><tr><td>Simulator</td><td>A system that runs an imitation of real behaviour</td></tr><tr><td>Industry</td><td>Organisations doing a similar kind of work</td></tr></tbody></table></div><p><strong>Information</strong> is data processed or organised to give useful meaning. “Average daily sales = 11” summarises the raw values 8, 11 and 14.</p>"
+            },
+            {
+              "id": "interaction",
+              "title": "Change an input; observe the result",
+              "html": "<p>A model processes inputs using rules or formulae. For a shop: <code>profit = income - costs</code>. Income 300 and costs 220 give profit 80.</p><p><strong>Real-time interaction</strong> means the system responds promptly enough to interact as events happen. Turning a simulator steering wheel causes the view to change promptly; an end-of-day report does not.</p><div class=\"callout\">Real time does not mean absolutely zero delay.</div>"
+            },
+            {
+              "id": "industry",
+              "title": "Use the model for a decision",
+              "html": "<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Industry</th><th scope=\"col\">Use</th><th scope=\"col\">Benefit</th></tr></thead><tbody><tr><td>Healthcare</td><td>Practise a procedure using a body simulation</td><td>Reduce risk to patients</td></tr><tr><td>Manufacturing</td><td>Model production-line changes</td><td>Estimate output and delays</td></tr><tr><td>Retail</td><td>Model sales, prices and stock</td><td>Plan stock and estimate demand</td></tr></tbody></table></div><p>Models let people repeat scenarios and reduce risks or trial costs. They simplify reality: inaccurate data or rules can mislead, and specialist simulators can be expensive.</p>"
+            }
+          ],
+          "activity": "With income fixed at 300, change costs from 220 to 250. Calculate both profits and explain one limitation of the prediction.",
+          "activityAnswer": "Profit falls from 80 to 50. The model depends on the accuracy of its data and simplified rules.",
+          "sources": [
+            0,
+            3,
+            4,
+            5
+          ],
+          "questions": [
+            {
+              "id": "models-q1",
+              "concept": "terms",
+              "prompt": "Which is an example of data?",
+              "explanation": "The recorded sales values are facts collected for processing.",
+              "type": "choice",
+              "options": [
+                "Daily sales values 8, 11 and 14",
+                "A command to shut down",
+                "Only the word “industry”",
+                "A software category"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "models-q2",
+              "concept": "terms",
+              "prompt": "Which description matches a model?",
+              "explanation": "A model represents a real system using data and rules.",
+              "type": "choice",
+              "options": [
+                "A representation using data and rules",
+                "Only a printed document",
+                "A unique record ID",
+                "A type of logic gate"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "models-q3",
+              "concept": "interaction",
+              "prompt": "Which shows real-time interaction?",
+              "explanation": "The system responds promptly enough for the user to interact as events happen.",
+              "type": "choice",
+              "options": [
+                "A steering input promptly changes the simulated view",
+                "A report appears next week",
+                "A result is printed after a month",
+                "No input affects the system"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "models-q4",
+              "concept": "industry",
+              "prompt": "How can a healthcare simulator help?",
+              "explanation": "Simulated practice reduces the risk to real patients; it cannot guarantee perfect real-world performance.",
+              "type": "choice",
+              "options": [
+                "Let staff practise a procedure without using a real patient",
+                "Guarantee that every future procedure succeeds",
+                "Replace all real-world training automatically",
+                "Ensure the model has no limitations"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "models-q5",
+              "concept": "industry",
+              "prompt": "Which data would help a retail sales model?",
+              "explanation": "Prices and customer spending are relevant to modelling sales.",
+              "type": "choice",
+              "options": [
+                "Item prices and amounts customers spend",
+                "Only keyboard colours",
+                "Only monitor sizes",
+                "Unrelated pupil heights"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "models-q6",
+              "concept": "interaction",
+              "prompt": "Income is 300 and costs are 250. What is predicted profit?",
+              "explanation": "profit = income - costs = 300 - 250 = 50.",
+              "type": "text",
+              "answers": [
+                "50"
+              ]
+            },
+            {
+              "id": "models-q7",
+              "concept": "industry",
+              "prompt": "Why might a model give a misleading prediction?",
+              "explanation": "Models simplify reality and depend on their data and assumptions.",
+              "type": "choice",
+              "options": [
+                "Its input data or assumptions may be inaccurate",
+                "Every model is reality itself",
+                "It can never use numerical data",
+                "It always has no rules"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "models-q8",
+              "concept": "terms",
+              "prompt": "A group of organisations doing a similar kind of work is an…",
+              "explanation": "Healthcare, manufacturing and retail are industries.",
+              "type": "choice",
+              "options": [
+                "Industry",
+                "Algorithm",
+                "Integer",
+                "Input"
+              ],
+              "correct": 0
+            }
+          ],
+          "demo": "model"
+        },
+        {
+          "id": "databases",
+          "title": "Databases & primary keys",
+          "summary": "Give every record its own identity.",
+          "minutes": 12,
+          "objectives": [
+            "Identify fields and records.",
+            "Choose a unique, present and suitable primary key."
+          ],
+          "concepts": [
+            {
+              "id": "structure",
+              "title": "Read the table",
+              "html": "<p>A <strong>database</strong> is an organised collection of data that can be stored, searched and updated. In a table, a <strong>field</strong> is a category or column; a <strong>record</strong> is a row about one person or item.</p><div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">StudentID</th><th scope=\"col\">Name</th><th scope=\"col\">Age</th><th scope=\"col\">Paid</th></tr></thead><tbody><tr><td>S201</td><td>Linh</td><td>11</td><td>True</td></tr><tr><td>S202</td><td>Linh</td><td>12</td><td>False</td></tr><tr><td>S203</td><td>Kojo</td><td>11</td><td>True</td></tr></tbody></table></div><p>This table contains 4 fields and 3 records. The headings are not a record.</p>"
+            },
+            {
+              "id": "key",
+              "title": "Choose an identity",
+              "html": "<p>A <strong>primary key</strong> uniquely identifies each record. In these simple tables, choose one ID field. Every key value must be <strong>unique</strong> and <strong>present</strong>; a good key also stays stable.</p><p>StudentID is suitable because each learner has a different ID. Name is unsuitable because two learners are called Linh. A key can contain letters and numbers, such as S201 or BK001.</p>"
+            },
+            {
+              "id": "purpose",
+              "title": "Explain why it matters",
+              "html": "<p>A key prevents confusion when finding or updating one particular record. It does not make all other fields unique or guarantee that every detail is correct.</p><div class=\"callout\">Exam explanation: “Book ID is suitable because each record has a different Book ID.”</div><p>Suitable field types in the student table: text, text, integer and Boolean.</p>"
+            }
+          ],
+          "activity": "Explain why Age and Name are weaker key choices than StudentID in the table.",
+          "activityAnswer": "Ages repeat, and two learners share the name Linh. StudentID uniquely identifies each record and is present in every row.",
+          "sources": [
+            0,
+            3,
+            4,
+            5
+          ],
+          "questions": [
+            {
+              "id": "databases-q1",
+              "concept": "structure",
+              "prompt": "In a database table, a field is…",
+              "explanation": "Each field stores one category of data, such as Age.",
+              "type": "choice",
+              "options": [
+                "A category shown as a column",
+                "One complete row",
+                "The whole database",
+                "A flowchart symbol"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "databases-q2",
+              "concept": "structure",
+              "prompt": "In a database table, a record is…",
+              "explanation": "A record collects the field values for one item or person.",
+              "type": "choice",
+              "options": [
+                "A row about one item or person",
+                "A column heading",
+                "A comparison sign",
+                "The database program itself"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "databases-q3",
+              "concept": "structure",
+              "prompt": "A table has a heading row and three student rows. How many records?",
+              "explanation": "The heading row labels the fields; it is not a data record.",
+              "type": "text",
+              "answers": [
+                "3",
+                "three"
+              ]
+            },
+            {
+              "id": "databases-q4",
+              "concept": "key",
+              "prompt": "Which is the best primary key for students with unique IDs but repeated names?",
+              "explanation": "StudentID has a unique value for each learner; the other values can repeat.",
+              "type": "choice",
+              "options": [
+                "StudentID",
+                "Name",
+                "Age",
+                "Paid"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "databases-q5",
+              "concept": "key",
+              "prompt": "True or false: every primary key must be a number.",
+              "explanation": "A key can contain letters and numbers as long as it uniquely identifies the record.",
+              "type": "choice",
+              "options": [
+                "False",
+                "True"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "databases-q6",
+              "concept": "key",
+              "prompt": "Can a primary-key value be blank?",
+              "explanation": "Each record needs a present key value to identify it.",
+              "type": "choice",
+              "options": [
+                "No",
+                "Yes"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "databases-q7",
+              "concept": "purpose",
+              "prompt": "Does a primary key guarantee every other field is correct?",
+              "explanation": "The key identifies a record. It does not verify all of its contents.",
+              "type": "choice",
+              "options": [
+                "No",
+                "Yes"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "databases-q8",
+              "concept": "purpose",
+              "prompt": "Why is Book ID useful when updating a database?",
+              "explanation": "A unique ID avoids confusion between records that may share other details.",
+              "type": "choice",
+              "options": [
+                "It identifies the exact book record",
+                "It forces every author name to differ",
+                "It calculates every book price",
+                "It automatically checks spelling"
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "id": "capture",
+          "title": "Data capture & queries",
+          "summary": "Ask clear questions, then find useful records.",
+          "minutes": 12,
+          "objectives": [
+            "Evaluate a data capture form.",
+            "Apply comparisons and AND in database queries."
+          ],
+          "concepts": [
+            {
+              "id": "forms",
+              "title": "Collect the right data",
+              "html": "<p>A <strong>data capture form</strong> collects data using labelled fields.</p><div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Quality</th><th scope=\"col\">What to check</th></tr></thead><tbody><tr><td>Clarity</td><td>Clear labels and wording; show required formats</td></tr><tr><td>Ease of use</td><td>Enough space and straightforward choices</td></tr><tr><td>Relevance</td><td>Only data needed for the purpose</td></tr></tbody></table></div><p>For a holiday-choice survey, ask about the destination choice. An unrelated question makes the form less relevant.</p>"
+            },
+            {
+              "id": "query",
+              "title": "Search with a condition",
+              "html": "<p>A <strong>query</strong> finds records matching conditions.</p><div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">StudentID</th><th scope=\"col\">Age</th><th scope=\"col\">Paid</th></tr></thead><tbody><tr><td>S201</td><td>11</td><td>True</td></tr><tr><td>S202</td><td>12</td><td>False</td></tr><tr><td>S203</td><td>11</td><td>True</td></tr></tbody></table></div><p><code>Age &gt;= 12</code> returns S202. <code>Age &gt;= 11</code> returns all three. A comparison must match the question you want to answer.</p>"
+            },
+            {
+              "id": "and",
+              "title": "Combine and check",
+              "html": "<p><strong>AND</strong> requires both conditions to be True. <code>Age &gt;= 11 AND Paid = True</code> returns S201 and S203 in this table. This is query notation; Python uses <code>==</code> to test equality.</p><p><strong>Validation</strong> checks whether input follows a rule. It cannot prove that a plausible-looking fact is true. A clearly worded form helps people supply the intended data.</p>"
+            }
+          ],
+          "activity": "Improve a field labelled “When?” on a booking form. Then find the records matching Age >= 12 AND Paid = True in the table.",
+          "activityAnswer": "Use a clearer label such as “Travel date” and show the required date format. No records match: S202 is 12 but Paid is False.",
+          "sources": [
+            0,
+            3
+          ],
+          "questions": [
+            {
+              "id": "capture-q1",
+              "concept": "forms",
+              "prompt": "Which change improves clarity?",
+              "explanation": "A specific label and format example make the requested information clear.",
+              "type": "choice",
+              "options": [
+                "Replace “When?” with “Travel date” and a format example",
+                "Make labels shorter but unclear",
+                "Ask unrelated questions",
+                "Remove every label"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "capture-q2",
+              "concept": "forms",
+              "prompt": "Which best describes relevance?",
+              "explanation": "Relevant fields serve the purpose of the data collection.",
+              "type": "choice",
+              "options": [
+                "Asking only for information needed for the task",
+                "Using every available question",
+                "Making all boxes very small",
+                "Adding decorative images"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "capture-q3",
+              "concept": "forms",
+              "prompt": "Which improves ease of use?",
+              "explanation": "Clear choices and sufficient space make the form easier to complete.",
+              "type": "choice",
+              "options": [
+                "Enough writing space and straightforward options",
+                "Tiny answer boxes",
+                "Unexplained abbreviations",
+                "Repeated unrelated fields"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "capture-q4",
+              "concept": "query",
+              "prompt": "What does a database query do?",
+              "explanation": "A query searches according to criteria supplied by the user.",
+              "type": "choice",
+              "options": [
+                "Finds records matching conditions",
+                "Changes a flowchart into an image",
+                "Always deletes every record",
+                "Supplies electricity"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "capture-q5",
+              "concept": "query",
+              "prompt": "Ages are S201: 11, S202: 12, S203: 11. Which ID matches Age >= 12?",
+              "explanation": "Only S202 has age 12, meeting the condition.",
+              "type": "text",
+              "answers": [
+                "S202"
+              ]
+            },
+            {
+              "id": "capture-q6",
+              "concept": "and",
+              "prompt": "Which logical operator requires both query conditions to be True?",
+              "explanation": "AND is True only when both conditions are True.",
+              "type": "choice",
+              "options": [
+                "AND",
+                "OR",
+                "NOT",
+                "OUTPUT"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "capture-q7",
+              "concept": "and",
+              "prompt": "S202 has Age 12 and Paid False. Does it match Age >= 12 AND Paid = True?",
+              "explanation": "The age condition is True, but the Paid condition is False.",
+              "type": "choice",
+              "options": [
+                "No",
+                "Yes"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "capture-q8",
+              "concept": "and",
+              "prompt": "Can validation prove that every accepted fact is true?",
+              "explanation": "Validation checks rules or formats, not whether every plausible value is factually true.",
+              "type": "choice",
+              "options": [
+                "No",
+                "Yes"
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "id": "spreadsheets",
+          "title": "Spreadsheet references & formulae",
+          "summary": "Know the cell, the range and the calculation.",
+          "minutes": 12,
+          "objectives": [
+            "Identify cells, references and ranges.",
+            "Read a formula and locate it in the formula bar."
+          ],
+          "concepts": [
+            {
+              "id": "references",
+              "title": "Find one cell",
+              "html": "<p>A <strong>cell</strong> is one position in a spreadsheet. A <strong>cell reference</strong> combines a column letter with a row number: A1 is column A, row 1; D10 is column D, row 10.</p><div class=\"table-wrap\"><table><thead><tr><th scope=\"col\"></th><th scope=\"col\">A</th><th scope=\"col\">B</th><th scope=\"col\">C</th><th scope=\"col\">D</th></tr></thead><tbody><tr><td>1</td><td>Item</td><td>Price</td><td>Quantity</td><td>Total</td></tr><tr><td>2</td><td>Book</td><td>4</td><td>3</td><td>12</td></tr><tr><td>3</td><td>Pen</td><td>2</td><td>5</td><td>10</td></tr></tbody></table></div><p>In this example, B2 contains 4 and D3 contains 10.</p>"
+            },
+            {
+              "id": "ranges",
+              "title": "Refer to a group",
+              "html": "<p>A <strong>range</strong> identifies a group of cells. <code>B2:D3</code> includes columns B, C and D in rows 2 and 3: six cells altogether. The colon links the first and last cells.</p><div class=\"callout\">B2:D3 is a range. B2+D3 is an addition expression, not range notation.</div>"
+            },
+            {
+              "id": "formulae",
+              "title": "Read the formula",
+              "html": "<p>A <strong>formula</strong> combines values, mathematical symbols, cell references or functions to process data. A formula begins with <code>=</code>.</p><p><code>=B2*C2</code> gives 12 for B2 = 4 and C2 = 3. <code>=AVERAGE(D2:D8)</code> calculates the average of the values in that range.</p><p>The <strong>formula bar</strong> shows the formula in the selected cell. A cell can display a calculated result while its formula is visible in the formula bar.</p>"
+            }
+          ],
+          "activity": "Name the first and last cells in B2:D3. If B2 = 4 and C2 = 3, calculate =B2*C2.",
+          "activityAnswer": "First cell: B2. Last cell: D3. The formula result is 12.",
+          "sources": [
+            3
+          ],
+          "questions": [
+            {
+              "id": "spreadsheets-q1",
+              "concept": "references",
+              "prompt": "Which is a cell reference?",
+              "explanation": "D10 combines a column letter and a row number.",
+              "type": "choice",
+              "options": [
+                "D10",
+                "D:10",
+                "10/D",
+                "D+10"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "spreadsheets-q2",
+              "concept": "references",
+              "prompt": "A1 is located at…",
+              "explanation": "Cell references give the column letter first, then the row number.",
+              "type": "choice",
+              "options": [
+                "Column A, row 1",
+                "Column 1, row A",
+                "Column D, row 10",
+                "Every cell in row 1"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "spreadsheets-q3",
+              "concept": "ranges",
+              "prompt": "Which is valid range notation?",
+              "explanation": "The colon indicates the rectangular range between two cell references.",
+              "type": "choice",
+              "options": [
+                "B2:D3",
+                "B2/D3",
+                "B2-D3",
+                "B2+D3"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "spreadsheets-q4",
+              "concept": "ranges",
+              "prompt": "How many cells are in B2:D3?",
+              "explanation": "Three columns (B, C, D) × two rows (2, 3) = 6.",
+              "type": "text",
+              "answers": [
+                "6",
+                "six"
+              ]
+            },
+            {
+              "id": "spreadsheets-q5",
+              "concept": "formulae",
+              "prompt": "Which symbol starts a spreadsheet formula?",
+              "explanation": "Spreadsheet formulae begin with =.",
+              "type": "choice",
+              "options": [
+                "=",
+                "#",
+                "?",
+                "!"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "spreadsheets-q6",
+              "concept": "formulae",
+              "prompt": "B2 = 4 and C2 = 3. What is =B2*C2?",
+              "explanation": "The formula multiplies 4 by 3.",
+              "type": "text",
+              "answers": [
+                "12"
+              ]
+            },
+            {
+              "id": "spreadsheets-q7",
+              "concept": "formulae",
+              "prompt": "Where can you see the selected cell’s formula?",
+              "explanation": "The formula bar displays the formula in the selected cell.",
+              "type": "choice",
+              "options": [
+                "Formula bar",
+                "Only the title bar",
+                "Only the page margin",
+                "The keyboard"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "spreadsheets-q8",
+              "concept": "formulae",
+              "prompt": "What does =AVERAGE(D2:D8) calculate?",
+              "explanation": "AVERAGE operates on the values in the specified range.",
+              "type": "choice",
+              "options": [
+                "The average of values in D2 through D8",
+                "Only D2 multiplied by D8",
+                "The name of column D",
+                "Only the first value"
+              ],
+              "correct": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "systems",
+      "title": "Computer Systems",
+      "short": "Systems",
+      "description": "Explore software, binary, logic and artificial intelligence.",
+      "icon": "▣",
+      "lessons": [
+        {
+          "id": "software",
+          "title": "Software & device design",
+          "summary": "Connect the tool to the user’s task.",
+          "minutes": 12,
+          "objectives": [
+            "Distinguish application and system software.",
+            "Evaluate a digital device against user needs."
+          ],
+          "concepts": [
+            {
+              "id": "categories",
+              "title": "Two software categories",
+              "html": "<p><strong>Hardware</strong> is the physical equipment. <strong>Software</strong> is the programs and instructions.</p><div class=\"table-wrap\"><table><thead><tr><th scope=\"col\"></th><th scope=\"col\">Application software</th><th scope=\"col\">System software</th></tr></thead><tbody><tr><td>Purpose</td><td>Helps the user do a task</td><td>Manages and supports the computer</td></tr><tr><td>Examples</td><td>Word processor, spreadsheet, browser, game</td><td>Windows, macOS, Linux, drivers, utilities</td></tr><tr><td>Typical task</td><td>Write, calculate, browse or play</td><td>Manage hardware, memory, files and security</td></tr></tbody></table></div><p>A browser is application software even though it may arrive installed on the computer.</p>"
+            },
+            {
+              "id": "os",
+              "title": "Support the applications",
+              "html": "<p>An <strong>operating system</strong> manages the computer and provides the platform on which applications run. A <strong>device driver</strong> enables communication with a device. <strong>Utilities</strong> maintain or protect the system, such as backup and antivirus tools.</p><div class=\"callout\">Explain using purpose: “Word is application software because it helps the user create documents.”</div>"
+            },
+            {
+              "id": "design",
+              "title": "Design for the person using it",
+              "html": "<p>A useful device should be easy to use, suit its purpose, have an appropriate appearance and protect user data. More buttons or more complicated features do not automatically make it better.</p><p>Evaluate the user’s needs: are the controls understandable, is the task easy to complete, and is information secure?</p>"
+            }
+          ],
+          "activity": "Classify a music player and Windows. Then give one reason to simplify the controls on a pupil’s device.",
+          "activityAnswer": "Music player: application software. Windows: system software. Clearer, simpler controls can make the device easier to use.",
+          "sources": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "questions": [
+            {
+              "id": "software-q1",
+              "concept": "categories",
+              "prompt": "A word processor is…",
+              "explanation": "It helps the user perform a specific task: creating documents.",
+              "type": "choice",
+              "options": [
+                "Application software",
+                "System software",
+                "Hardware",
+                "A primary key"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "software-q2",
+              "concept": "categories",
+              "prompt": "Which is system software?",
+              "explanation": "Windows is an operating system that manages computer resources.",
+              "type": "choice",
+              "options": [
+                "Windows",
+                "A word processor",
+                "A music player",
+                "A video game"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "software-q3",
+              "concept": "os",
+              "prompt": "Which task belongs to an operating system?",
+              "explanation": "Managing memory is a system-software responsibility.",
+              "type": "choice",
+              "options": [
+                "Managing memory",
+                "Writing the user’s essay",
+                "Choosing a holiday destination",
+                "Calculating every spreadsheet answer manually"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "software-q4",
+              "concept": "categories",
+              "prompt": "A web browser is…",
+              "explanation": "Browsing the web is a user task performed by application software.",
+              "type": "choice",
+              "options": [
+                "Application software",
+                "System software",
+                "A sensor",
+                "A logic gate"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "software-q5",
+              "concept": "os",
+              "prompt": "Which is a system utility?",
+              "explanation": "Antivirus software helps maintain or protect the computer system.",
+              "type": "choice",
+              "options": [
+                "Antivirus software",
+                "A presentation slide",
+                "A student record",
+                "A drawing on paper"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "software-q6",
+              "concept": "design",
+              "prompt": "Which is the strongest device-design goal?",
+              "explanation": "Useful, understandable and secure design serves the user.",
+              "type": "choice",
+              "options": [
+                "Meet user needs with clear controls",
+                "Add as many buttons as possible",
+                "Make every task more complex",
+                "Ignore data security"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "software-q7",
+              "concept": "design",
+              "prompt": "True or false: a complex set of features always improves a device.",
+              "explanation": "Unnecessary complexity can make a device harder to use.",
+              "type": "choice",
+              "options": [
+                "False",
+                "True"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "software-q8",
+              "concept": "categories",
+              "prompt": "Which describes hardware?",
+              "explanation": "Hardware consists of the physical parts of the computer or device.",
+              "type": "choice",
+              "options": [
+                "The physical equipment",
+                "The instructions alone",
+                "Only an algorithm",
+                "Only an application file"
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "id": "binary",
+          "title": "Digital data & binary",
+          "summary": "See what patterns of 0s and 1s can represent.",
+          "minutes": 12,
+          "objectives": [
+            "Explain digitisation, bits and bytes.",
+            "Read simple binary place values."
+          ],
+          "concepts": [
+            {
+              "id": "digital",
+              "title": "Represent the real world",
+              "html": "<p>Analogue information varies continuously. Digitisation represents information in a form a computer can process. A digital image uses <strong>pixels</strong>.</p><p><strong>Binary</strong> uses 0 and 1. Binary patterns can represent numbers, characters, images and sound. Their meaning depends on the encoding rules.</p>"
+            },
+            {
+              "id": "units",
+              "title": "Count the bits",
+              "html": "<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Unit</th><th scope=\"col\">Meaning</th></tr></thead><tbody><tr><td>Bit</td><td>One binary digit</td></tr><tr><td>Nibble</td><td>4 bits</td></tr><tr><td>Byte</td><td>8 bits</td></tr></tbody></table></div><p>Five bytes contain 40 bits. Eight bits have 256 different patterns; as unsigned whole numbers, they represent 0 to 255.</p>"
+            },
+            {
+              "id": "conversion",
+              "title": "Read the place values",
+              "html": "<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">128</th><th scope=\"col\">64</th><th scope=\"col\">32</th><th scope=\"col\">16</th><th scope=\"col\">8</th><th scope=\"col\">4</th><th scope=\"col\">2</th><th scope=\"col\">1</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr></tbody></table></div><p>Add only the columns containing 1: 16 + 4 + 2 = <strong>22</strong>. For denary 25, use 16 + 8 + 1: <code>00011001</code>.</p><div class=\"callout\">Place values double towards the left. Binary 10 is denary 2.</div>"
+            }
+          ],
+          "activity": "Convert 00001101 to denary. Then represent denary 18 using eight bits.",
+          "activityAnswer": "13 = 8 + 4 + 1. Denary 18 = 16 + 2, so its 8-bit representation is 00010010.",
+          "sources": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "questions": [
+            {
+              "id": "binary-q1",
+              "concept": "digital",
+              "prompt": "Binary uses which two digits?",
+              "explanation": "Binary represents information using two digits, 0 and 1.",
+              "type": "choice",
+              "options": [
+                "0 and 1",
+                "1 and 2",
+                "0 and 9",
+                "2 and 8"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "binary-q2",
+              "concept": "digital",
+              "prompt": "What can binary patterns represent?",
+              "explanation": "Different encoding rules allow binary to represent many kinds of data.",
+              "type": "choice",
+              "options": [
+                "Numbers, text, images and sound",
+                "Only numbers",
+                "Only text",
+                "Only pictures"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "binary-q3",
+              "concept": "digital",
+              "prompt": "A digital image is made up of…",
+              "explanation": "A digital image represents its picture using pixels.",
+              "type": "choice",
+              "options": [
+                "Pixels",
+                "Only paper fibres",
+                "Flowchart decisions",
+                "Primary keys"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "binary-q4",
+              "concept": "units",
+              "prompt": "How many bits are in one byte?",
+              "explanation": "One byte contains eight bits.",
+              "type": "text",
+              "answers": [
+                "8",
+                "eight"
+              ]
+            },
+            {
+              "id": "binary-q5",
+              "concept": "units",
+              "prompt": "How many bits are in five bytes?",
+              "explanation": "5 × 8 = 40 bits.",
+              "type": "text",
+              "answers": [
+                "40",
+                "forty"
+              ]
+            },
+            {
+              "id": "binary-q6",
+              "concept": "conversion",
+              "prompt": "Convert binary 00001101 to denary.",
+              "explanation": "8 + 4 + 1 = 13.",
+              "type": "text",
+              "answers": [
+                "13"
+              ]
+            },
+            {
+              "id": "binary-q7",
+              "concept": "conversion",
+              "prompt": "Write denary 18 as exactly eight binary digits.",
+              "explanation": "18 = 16 + 2, giving 00010010.",
+              "type": "text",
+              "answers": [
+                "00010010"
+              ]
+            },
+            {
+              "id": "binary-q8",
+              "concept": "conversion",
+              "prompt": "What is binary 10 in denary?",
+              "explanation": "The left place is 2 and the right place is 1: 1×2 + 0×1 = 2.",
+              "type": "text",
+              "answers": [
+                "2",
+                "two"
+              ]
+            }
+          ],
+          "demo": "binary"
+        },
+        {
+          "id": "logic",
+          "title": "Boolean logic & gates",
+          "summary": "Use AND, OR and NOT with confidence.",
+          "minutes": 12,
+          "objectives": [
+            "Use truth tables for AND, OR and NOT.",
+            "Evaluate conditions and combined logic."
+          ],
+          "concepts": [
+            {
+              "id": "rules",
+              "title": "Two possible states",
+              "html": "<p><strong>Boolean logic</strong> uses True and False, represented here as 1 and 0. Logic gates implement logical operations in circuits.</p><p><strong>AND</strong> needs both inputs True. <strong>OR</strong> needs at least one True, including both. <strong>NOT</strong> reverses its single input.</p>"
+            },
+            {
+              "id": "tables",
+              "title": "Read the truth tables",
+              "html": "<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">A</th><th scope=\"col\">B</th><th scope=\"col\">A AND B</th><th scope=\"col\">A OR B</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td><td>1</td></tr></tbody></table></div><div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">A</th><th scope=\"col\">NOT A</th></tr></thead><tbody><tr><td>0</td><td>1</td></tr><tr><td>1</td><td>0</td></tr></tbody></table></div><p>If entry requires a ticket AND an adult, a ticket alone is not enough. If an alarm responds to smoke OR heat, either can activate it.</p>"
+            },
+            {
+              "id": "combined",
+              "title": "Work from the inside out",
+              "html": "<p>For combined expressions, evaluate the brackets and NOT first, then combine the remaining truth values.</p><div class=\"callout\">(True OR False) AND NOT True<br>= True AND False<br>= False</div><p>If either the username or password is wrong, an error condition can use OR.</p>"
+            }
+          ],
+          "activity": "For A = True and B = False, find A AND B, A OR B and NOT A. Explain each result.",
+          "activityAnswer": "False: both are not True. True: at least one is True. False: NOT reverses True.",
+          "sources": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "questions": [
+            {
+              "id": "logic-q1",
+              "concept": "rules",
+              "prompt": "Boolean values are…",
+              "explanation": "Boolean logic uses two truth values.",
+              "type": "choice",
+              "options": [
+                "True or False",
+                "Only 1 to 10",
+                "Any paragraph",
+                "Only dates"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "logic-q2",
+              "concept": "tables",
+              "prompt": "What is True AND False?",
+              "explanation": "AND needs both inputs to be True.",
+              "type": "choice",
+              "options": [
+                "False",
+                "True"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "logic-q3",
+              "concept": "tables",
+              "prompt": "What is True OR False?",
+              "explanation": "OR needs at least one input to be True.",
+              "type": "choice",
+              "options": [
+                "True",
+                "False"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "logic-q4",
+              "concept": "tables",
+              "prompt": "What is True OR True?",
+              "explanation": "OR includes the case where both inputs are True.",
+              "type": "choice",
+              "options": [
+                "True",
+                "False"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "logic-q5",
+              "concept": "tables",
+              "prompt": "What is NOT True?",
+              "explanation": "NOT reverses the input truth value.",
+              "type": "choice",
+              "options": [
+                "False",
+                "True"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "logic-q6",
+              "concept": "rules",
+              "prompt": "Which gate needs both inputs to be True?",
+              "explanation": "AND produces True only when both inputs are True.",
+              "type": "choice",
+              "options": [
+                "AND",
+                "OR",
+                "NOT",
+                "STOP"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "logic-q7",
+              "concept": "combined",
+              "prompt": "An error appears if either the username or password is wrong. Which operation fits?",
+              "explanation": "Either incorrect condition is enough, so OR combines them.",
+              "type": "choice",
+              "options": [
+                "OR",
+                "AND",
+                "NOT alone",
+                "Multiplication"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "logic-q8",
+              "concept": "combined",
+              "prompt": "Evaluate (True OR False) AND NOT True.",
+              "explanation": "The bracket gives True; NOT True gives False; True AND False is False.",
+              "type": "choice",
+              "options": [
+                "False",
+                "True"
+              ],
+              "correct": 0
+            }
+          ],
+          "demo": "logic"
+        },
+        {
+          "id": "ai",
+          "title": "AI & automation",
+          "summary": "Recognise the task, the input and the limits.",
+          "minutes": 12,
+          "objectives": [
+            "Identify AI applications and environmental inputs.",
+            "Distinguish AI from automation and explain limitations."
+          ],
+          "concepts": [
+            {
+              "id": "ai",
+              "title": "Recognise patterns and make decisions",
+              "html": "<p><strong>Artificial intelligence (AI)</strong> enables computers to perform tasks associated with human intelligence, such as recognising speech or images and making predictions.</p><p>AI can use input from cameras or sensors, process it and produce an output. <strong>Machine learning</strong> is an approach that learns patterns from training examples and applies them to new data.</p><div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Application</th><th scope=\"col\">Input</th><th scope=\"col\">Task / output</th></tr></thead><tbody><tr><td>Voice assistant</td><td>Spoken words</td><td>Recognise a request and respond</td></tr><tr><td>Image recognition</td><td>Photograph</td><td>Suggest a category</td></tr><tr><td>Recommendation system</td><td>Viewing or purchase history</td><td>Suggest relevant items</td></tr></tbody></table></div>"
+            },
+            {
+              "id": "automation",
+              "title": "Carry out a task automatically",
+              "html": "<p><strong>Automation</strong> uses machines or computers to carry out tasks without continual human action. A factory machine can build parts automatically; an email can be sent by a fixed rule.</p><p>A simple timer, calculator or fixed IF rule is not, by itself, evidence of AI. AI and automation can be used together. AI does not have to be a physical robot.</p>"
+            },
+            {
+              "id": "limits",
+              "title": "Judge the result",
+              "html": "<p>AI can process many examples quickly, identify patterns and support decisions. It can also make mistakes, reflect bias in training data and raise privacy concerns.</p><p>If one kind of object is poorly represented in training examples, an image classifier may recognise it less reliably. More varied, relevant data can help, but do not guarantee perfect results.</p><div class=\"callout\">Check important outputs and avoid sharing personal information unnecessarily.</div>"
+            }
+          ],
+          "activity": "Explain why recognising an object in a new image is an AI task, while sending an email at a fixed time can be ordinary automation.",
+          "activityAnswer": "Image recognition uses patterns to identify an object. A scheduled email can follow a fixed time rule without needing to recognise or learn patterns.",
+          "sources": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "questions": [
+            {
+              "id": "ai-q1",
+              "concept": "ai",
+              "prompt": "Which task is an AI application in the supplied materials?",
+              "explanation": "Image recognition is an example of an AI task.",
+              "type": "choice",
+              "options": [
+                "Recognising an object in an image",
+                "Only adding 2 + 3 on a basic calculator",
+                "Only switching on a light manually",
+                "Only typing a letter"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "ai-q2",
+              "concept": "ai",
+              "prompt": "Which can supply information from the surroundings?",
+              "explanation": "A camera captures input; speakers and displays produce outputs.",
+              "type": "choice",
+              "options": [
+                "Camera",
+                "Speaker",
+                "Display-only screen",
+                "Printed output"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "ai-q3",
+              "concept": "ai",
+              "prompt": "What does machine learning use to find patterns?",
+              "explanation": "Machine learning learns patterns from examples and uses them with new data.",
+              "type": "choice",
+              "options": [
+                "Training examples",
+                "Only a file name",
+                "Only the computer case",
+                "Only screen brightness"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "ai-q4",
+              "concept": "automation",
+              "prompt": "What is automation?",
+              "explanation": "Automation carries out tasks without continual human action.",
+              "type": "choice",
+              "options": [
+                "Using machines or computers to carry out tasks automatically",
+                "Always using a human to do every step",
+                "Only drawing a flowchart",
+                "Always recognising a face"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "ai-q5",
+              "concept": "automation",
+              "prompt": "Does a fixed timer alone prove that a system uses AI?",
+              "explanation": "A timer can follow a fixed rule without an AI task.",
+              "type": "choice",
+              "options": [
+                "No",
+                "Yes"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "ai-q6",
+              "concept": "automation",
+              "prompt": "Can AI and automation be used together?",
+              "explanation": "An automated system can include AI, but automation alone is not evidence of AI.",
+              "type": "choice",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "ai-q7",
+              "concept": "limits",
+              "prompt": "Why might an image classifier struggle with one kind of object?",
+              "explanation": "Poor representation in training data can reduce recognition reliability.",
+              "type": "choice",
+              "options": [
+                "Too few relevant training examples",
+                "Every AI output is guaranteed correct",
+                "It always needs fewer examples",
+                "It can never use camera input"
+              ],
+              "correct": 0
+            },
+            {
+              "id": "ai-q8",
+              "concept": "limits",
+              "prompt": "Which is a sensible response to an important AI output?",
+              "explanation": "AI can make mistakes, so important results need checking.",
+              "type": "choice",
+              "options": [
+                "Check it before relying on it",
+                "Assume it can never be wrong",
+                "Share unnecessary personal information",
+                "Ignore possible bias"
+              ],
+              "correct": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "demos": {
+    "binary": "<section class=\"demo\" data-demo=\"binary\"><h3>Try the binary switches</h3><p class=\"small\">Turn each bit on or off. Add the place values that are on.</p><div class=\"bits\"><button class=\"bit\" data-bit=\"128\" aria-pressed=\"false\" aria-label=\"Toggle the 128 bit\"><span>128</span><strong>0</strong></button><button class=\"bit\" data-bit=\"64\" aria-pressed=\"false\" aria-label=\"Toggle the 64 bit\"><span>64</span><strong>0</strong></button><button class=\"bit\" data-bit=\"32\" aria-pressed=\"false\" aria-label=\"Toggle the 32 bit\"><span>32</span><strong>0</strong></button><button class=\"bit\" data-bit=\"16\" aria-pressed=\"false\" aria-label=\"Toggle the 16 bit\"><span>16</span><strong>0</strong></button><button class=\"bit\" data-bit=\"8\" aria-pressed=\"false\" aria-label=\"Toggle the 8 bit\"><span>8</span><strong>0</strong></button><button class=\"bit\" data-bit=\"4\" aria-pressed=\"false\" aria-label=\"Toggle the 4 bit\"><span>4</span><strong>0</strong></button><button class=\"bit\" data-bit=\"2\" aria-pressed=\"false\" aria-label=\"Toggle the 2 bit\"><span>2</span><strong>0</strong></button><button class=\"bit\" data-bit=\"1\" aria-pressed=\"false\" aria-label=\"Toggle the 1 bit\"><span>1</span><strong>0</strong></button></div><div class=\"demo-output\" role=\"status\" id=\"binary-out\">00000000 = 0 in denary</div></section>",
+    "logic": "<section class=\"demo\" data-demo=\"logic\"><h3>Logic playground</h3><div class=\"row wrap\"><label><input type=\"checkbox\" id=\"logic-a\"> A is True</label><label><input type=\"checkbox\" id=\"logic-b\"> B is True</label></div><div class=\"demo-output\" id=\"logic-out\" role=\"status\"></div></section>",
+    "model": "<section class=\"demo\" data-demo=\"model\"><h3>Explore the shop model</h3><p class=\"small\">Income stays at 300. Change the costs and observe the predicted profit.</p><label for=\"model-cost\">Costs: <span id=\"model-cost-label\">220</span></label><input id=\"model-cost\" type=\"range\" min=\"0\" max=\"400\" value=\"220\" step=\"10\" style=\"width:100%\"><div class=\"demo-output\" id=\"model-out\" role=\"status\"></div></section>",
+    "flow": "<section class=\"demo\" data-demo=\"flow\"><h3>Trace the fan decision</h3><label for=\"flow-temperature\">Temperature</label> <input class=\"input\" type=\"number\" id=\"flow-temperature\" value=\"30\"><div class=\"demo-output\" id=\"flow-out\" role=\"status\"></div></section>"
+  }
+};
+'use strict';
+// The course object above is the only curriculum source. No network requests or dependencies.
+const STORAGE_KEY = 'circuit-stage7-attached-v1';
+const $ = (s, root=document) => root.querySelector(s);
+const $$ = (s, root=document) => [...root.querySelectorAll(s)];
+const esc = x => String(x ?? '').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const sections = courseData.sections;
+const lessons = sections.flatMap(s=>s.lessons.map(l=>({...l, sectionId:s.id})));
+const lessonMap = Object.fromEntries(lessons.map(l=>[l.id,l]));
+const sectionMap = Object.fromEntries(sections.map(s=>[s.id,s]));
+const questions = Object.fromEntries(lessons.flatMap(l=>l.questions.map(q=>[q.id,{...q,lessonId:l.id,sectionId:l.sectionId}])));
+let storageWarning = '';
+let toastTimer;
+let confirmAction = null;
+let lastFocus = null;
+function freshState(theme='light') { return {schema:1,courseId:courseData.id,theme,lessons:{},sections:{},sessions:{},earned:{},exam:null,examHistory:[],lastLesson:null,xp:0}; }
+function readState(){
+ try {
+  const raw=localStorage.getItem(STORAGE_KEY); if(!raw)return freshState();
+  const p=JSON.parse(raw);
+  if(p.schema!==1||p.courseId!==courseData.id||!p.lessons||!p.sections||!p.sessions||!p.earned||!Array.isArray(p.examHistory))throw Error('Invalid saved data');
+  return {...freshState(),...p,theme:p.theme==='dark'?'dark':'light'};
+ } catch(e){storageWarning='Saved progress could not be loaded. This session starts fresh; progress will be saved if browser storage is available.';return freshState();}
+}
+let state=readState();
+function recomputeXP(){state.xp=Object.keys(state.earned).filter(id=>questions[id]).length*5+lessons.filter(l=>state.lessons[l.id]?.mastered).length*40+sections.filter(s=>state.sections[s.id]?.mastered).length*100+(state.examHistory.length?100:0);}
+function save(){
+ recomputeXP();
+ try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}
+ catch(e){storageWarning='Your browser cannot save progress right now. Keep this tab open; progress may be lost when it closes.';}
+ updateSaveWarnings();
+}
+function updateSaveWarnings(){const n=$('#storage-warning');if(n){n.textContent=storageWarning;n.classList.toggle('hide',!storageWarning);}}
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+function normalise(x){return String(x??'').trim().replace(/^["'“”‘’](.*)["'“”‘’]$/,'$1').replace(/\s+/g,' ').toLowerCase();}
+function correct(q,value){return q.type==='choice'?Number(value)===q.correct&&value!==undefined&&value!==null&&value!=='':q.answers.some(a=>normalise(a)===normalise(value));}
+function answered(q,value){return q.type==='choice'?value!==undefined&&value!==null&&value!=='':String(value??'').trim().length>0;}
+function answerText(q,value){if(!answered(q,value))return 'Not answered';return q.type==='choice'?q.options[Number(value)]??'Not answered':String(value);}
+function expectedText(q){return q.type==='choice'?q.options[q.correct]:q.answers[0];}
+function pct(n,d){return d?Math.round(n/d*100):0;}
+function resultLabel(p){return p>=80?'Strong':p>=60?'Developing':'Review next';}
+function stamp(ms){return new Date(ms).toLocaleString('en-GB',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});}
+function scoreProgress(p){return p?.mastered?'mastered':p?.visited||p?.attempts?.length?'started':'ready';}
+function statusCircle(p){const s=scoreProgress(p);return `<span class="status-circle ${s==='mastered'?'done':s==='started'?'started':''}" aria-label="${s==='mastered'?'Mastered':s==='started'?'In progress':'Ready to start'}">${s==='mastered'?'✓':s==='started'?'◐':'○'}</span>`;}
+function lessonURL(id,concept=''){return '#lesson/'+id+(concept?'/'+concept:'');}
+function getRoute(){const [raw='',id='',detail='']=location.hash.replace(/^#/,'').split('/');return {type:raw||'home',id,detail};}
+function nav(hash){if(location.hash===hash){render();}else location.hash=hash;}
+function toast(message){$('#toast').textContent=message;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').textContent='',4500);}
+function confirm(title,body,label,fn){lastFocus=document.activeElement;$('#dialog-title').textContent=title;$('#dialog-body').textContent=body;$('#dialog-confirm').textContent=label;confirmAction=fn;$('#confirm-dialog').showModal();$('#dialog-cancel').focus();}
+function closeDialog(){if($('#confirm-dialog').open)$('#confirm-dialog').close();confirmAction=null;lastFocus?.focus();}
+function unitUnlocked(id){return sectionMap[id].lessons.every(l=>state.lessons[l.id]?.mastered);}
+function counts(){const done=lessons.filter(l=>state.lessons[l.id]?.mastered).length;const badges=sections.filter(s=>state.sections[s.id]?.mastered).length;return {done,badges,completion:pct(done+badges,lessons.length+sections.length)};}
+function nextLesson(){return lessonMap[state.lastLesson]&&!state.lessons[state.lastLesson]?.mastered?lessonMap[state.lastLesson]:lessons.find(l=>!state.lessons[l.id]?.mastered)||lessons[0];}
+function updateChrome(){
+ const c=counts(),r=getRoute();
+ document.documentElement.dataset.theme=state.theme;
+ $('#theme-btn').setAttribute('aria-label',`Switch to ${state.theme==='light'?'dark':'light'} mode`);
+ $('#metrics').innerHTML=`<div class="metric" title="Experience points"><span class="metric-icon" aria-hidden="true">ϟ</span><span><strong>${state.xp}</strong> XP</span></div><div class="metric" title="Unit mastery badges"><span class="metric-icon" aria-hidden="true">✧</span><span><strong>${c.badges}/4</strong><span class="metric-label"> badges</span></span></div><div class="metric metric-course" title="Mastered lessons and unit checkpoints"><span><strong>${c.completion}%</strong><span class="metric-label"> complete</span></span><div class="mini-progress" aria-hidden="true"><span style="width:${c.completion}%"></span></div></div>`;
+ const opened=$$('.unit-nav[open]').map(x=>x.dataset.unit);
+ $('#sidebar').innerHTML=`<a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">c</span><div><div class="brand-name">circuit</div><div class="brand-caption">THE REVISION LAB</div></div></a><nav class="nav-scroll" aria-label="Revision"><a class="nav-main ${r.type==='home'?'active':''}" href="#home"><span class="nav-icon" aria-hidden="true">▦</span> My learning path</a><a class="nav-main ${r.type==='exam'||r.type==='report'?'active':''}" href="#exam"><span class="nav-icon" aria-hidden="true">◷</span> Mock exam ${state.exam?'<span class="pill amber">Live</span>':''}</a><a class="nav-main ${r.type==='progress'?'active':''}" href="#progress"><span class="nav-icon" aria-hidden="true">✧</span> My progress</a><div class="nav-label">YOUR FOUR UNITS</div>${sections.map((s,i)=>{const current=r.type==='lesson'?lessonMap[r.id]?.sectionId===s.id:r.type==='section'&&r.id===s.id;return `<details class="unit-nav" data-unit="${s.id}" ${current||opened.includes(s.id)||(!opened.length&&r.type==='home'&&i===0)?'open':''}><summary><span aria-hidden="true">${s.icon}</span>${s.title}</summary>${s.lessons.map(l=>{const st=scoreProgress(state.lessons[l.id]);return `<a class="nav-lesson ${r.id===l.id?'active':''}" href="${lessonURL(l.id)}" ${r.id===l.id?'aria-current="page"':''}><span class="nav-status ${st==='mastered'?'mastered':''}" aria-label="${st==='mastered'?'Mastered':st==='started'?'In progress':'Ready'}">${st==='mastered'?'✓':st==='started'?'◐':'○'}</span>${l.title}</a>`;}).join('')}<a class="nav-lesson ${r.type==='section'&&r.id===s.id?'active':''}" href="#section/${s.id}"><span class="nav-status" aria-label="${state.sections[s.id]?.mastered?'Mastered':unitUnlocked(s.id)?'Unlocked':'Locked'}">${state.sections[s.id]?.mastered?'✦':unitUnlocked(s.id)?'◇':'▣'}</span>Unit checkpoint</a></details>`;}).join('')}<a class="nav-main ${r.type==='settings'?'active':''}" href="#settings" style="margin-top:22px"><span class="nav-icon" aria-hidden="true">⚙</span> Settings & sources</a></nav><div class="sidebar-footer"><strong>Stage 7 · Computing</strong>Small steps. Lasting understanding.</div>`;
+ $('#exam-banner').innerHTML=state.exam?`<div class="exam-banner"><span>Mock exam running · <strong data-time-inline></strong> remaining</span><a href="#exam">Return to exam</a></div>`:'';
+ updateTimerText();
+}
+function pageHead(eyebrow,title,description){return `<div class="lesson-heading"><div class="eyebrow">${eyebrow}</div><h1>${title}</h1>${description?`<p class="lead">${description}</p>`:''}</div>`;}
+function render(fromStorage=false){
+ if(state.exam&&Date.now()>=state.exam.deadline){finishExam(true);return;}
+ const r=getRoute();
+ if(!fromStorage&&r.type==='lesson'&&lessonMap[r.id]){state.lessons[r.id]??={attempts:[],weak:[]};state.lessons[r.id].visited=true;state.lastLesson=r.id;save();}
+ updateChrome();
+ let content='';
+ if(r.type==='lesson'&&lessonMap[r.id])content=renderLesson(r.id);
+ else if(r.type==='section'&&sectionMap[r.id])content=renderSection(r.id);
+ else if(r.type==='exam')content=renderExam();
+ else if(r.type==='report')content=renderReport(r.id);
+ else if(r.type==='progress')content=renderProgress();
+ else if(r.type==='settings')content=renderSettings();
+ else content=renderHome();
+ $('#main').innerHTML=`<div id="storage-warning" role="status" class="notice ${storageWarning?'':'hide'}">${esc(storageWarning)}</div>`+content;
+ highlightCode();setupDemos();updateTimerText();
+ document.body.classList.remove('nav-open');syncMenu();
+ if(r.type==='lesson'&&r.detail){setTimeout(()=>{const t=document.getElementById('concept-'+r.detail);if(t){t.scrollIntoView({block:'start'});t.setAttribute('tabindex','-1');t.focus({preventScroll:true});}},0);}
+ else {window.scrollTo({top:0,behavior:'instant'});$('#main').focus({preventScroll:true});}
+ document.title=`${r.type==='lesson'&&lessonMap[r.id]?lessonMap[r.id].title:r.type==='exam'?'Mock exam':r.type==='report'?'Exam readiness report':'Stage 7 Computing'} | Circuit`;
+}
+function renderHome(){
+ const c=counts(),next=nextLesson(),last=state.examHistory.at(-1);
+ return `<section class="hero"><div><div class="eyebrow">STAGE 7 · YOUR LEARNING PATH</div><h1>${courseData.title}</h1><p>Understand it. Try it. Master it. Build your exam confidence with short lessons and feedback that helps you move forward.</p><a class="btn" href="${lessonURL(next.id)}">${c.done===16?'Revisit a lesson':state.lastLesson?'Continue learning':'Start learning'}</a><p class="hero-meta">${c.done===16?'All 16 lessons mastered':`Up next: ${next.title}`} · 10–15 minutes</p></div><div class="orbit" aria-hidden="true"><div class="orbit-ring"><span class="orbit-chip chip-a">01</span><span class="orbit-chip chip-b">✓</span><span class="orbit-chip chip-c">{ }</span><div class="orbit-core">&lt;/&gt;</div></div></div></section>
+ <div class="quick-strip"><div class="quick-item"><span class="quick-number">${c.done}/16</span><p>micro-lessons mastered</p></div><div class="quick-item"><span class="quick-number">4/5</span><p>to master each lesson</p></div><div class="quick-item"><span class="quick-number">25</span><p>questions in your mock exam</p></div></div>
+ <div class="row section-head"><h2>Your learning path</h2><span class="small muted">Pick a lesson. Make progress.</span></div>
+ <div class="grid two-col">${sections.map(s=>`<section class="card unit-card"><div class="unit-card-head"><div class="unit-tile" aria-hidden="true">${s.icon}</div><div><h3>${s.title}</h3><p class="small">${s.description}</p></div></div><ul class="unit-list">${s.lessons.map(l=>`<li><a class="lesson-link" href="${lessonURL(l.id)}">${statusCircle(state.lessons[l.id])}<span>${l.title}</span><span class="lesson-time">10–15 min</span></a></li>`).join('')}</ul><div class="checkpoint"><a href="#section/${s.id}">${state.sections[s.id]?.mastered?'✦ Badge earned':unitUnlocked(s.id)?'◇ Take unit checkpoint':'▣ Unit checkpoint locked'}</a><small>${s.lessons.filter(l=>state.lessons[l.id]?.mastered).length}/4 lessons</small></div></section>`).join('')}</div>
+ <div class="grid two-col" style="margin-top:24px"><section class="card"><span class="pill blue">EXAM PRACTICE</span><h2 style="margin-top:14px">Ready for a full run?</h2><p class="muted">25 questions. 45 minutes. A personalised report with exact lessons to revisit. Available whenever you want to check your starting point.</p><a class="btn secondary" href="#exam">${state.exam?'Resume mock exam':'Explore the mock exam'}</a></section><section class="card"><span class="pill green">YOUR NEXT STEP</span><h2 style="margin-top:14px">${last?'Learn from your last attempt':'A simple way to revise'}</h2><p class="muted">${last?`Your latest mock score is ${last.percent}%. Use the topic breakdown to decide where to spend your next 15 minutes.`:'Read a concept, explain it in your own words, then take the five-question check. Mistakes point you to the notes that will help.'}</p>${last?`<a class="btn secondary" href="#report/${last.id}">Open readiness report</a>`:`<a class="btn quiet" href="#progress">See how mastery works</a>`}</section></div>
+ <div class="study-tip"><span class="inline-icon" aria-hidden="true">✧</span><div><h3>Understanding earns the badge.</h3><p>Master each lesson with 4/5, then earn the unit badge with 8/10. You can revisit notes and retry as often as you need. XP rewards new correct answers and first-time mastery.</p></div></div><p class="page-footer">Based on your supplied Stage 7 materials · Works offline · Progress stays in this browser</p>`;
+}
+function renderLesson(id){
+ const l=lessonMap[id],s=sectionMap[l.sectionId],p=state.lessons[id]||{},weak=p.weak||[];
+ return `<div class="lesson-heading"><div class="row wrap"><a class="small" href="#home">All units</a><span class="pill ${p.mastered?'green':'blue'}">${p.mastered?'✓ Mastered':'10–15 minute lesson'}</span></div><div class="eyebrow">${s.title}</div><h1>${l.title}</h1><p class="lead">${l.summary}</p></div><div class="lesson-layout"><div><section class="objective-box"><strong>I can…</strong><ul>${l.objectives.map(x=>`<li>${x}</li>`).join('')}</ul></section>${weak.length?'<div class="notice">The highlighted notes match concepts missed in your latest check. Review them before retrying.</div>':''}${l.concepts.map((c,i)=>`<section class="card concept-card ${weak.includes(c.id)?'weak':''}" id="concept-${c.id}">${weak.includes(c.id)?'<div class="weak-label">REVIEW THIS CONCEPT</div>':''}<h2>${c.title}</h2>${c.html}</section>`).join('')}${l.demo?renderDemo(l.demo):''}<section class="card recall"><div class="eyebrow">PAUSE & RETRIEVE · 3 MINUTES</div><h2>Try it without the notes.</h2><p>${l.activity}</p><details><summary>Check the worked answer</summary><p>${l.activityAnswer}</p></details></section><section class="card quiz-block" id="micro-quiz" aria-label="Five-question lesson check">${renderQuiz('lesson',id)}</section><details style="margin-top:20px"><summary class="small muted">Content sources for this lesson</summary><ul class="source-list">${l.sources.map(i=>`<li>${esc(courseData.sources[i])}</li>`).join('')}</ul></details></div><aside class="lesson-side" aria-label="Lesson contents"><div class="card"><h3>In this lesson</h3>${l.concepts.map(c=>`<a href="${lessonURL(id,c.id)}">${c.title}</a>`).join('')}<a href="#micro-quiz" data-scroll-quiz>Five-question check</a><div class="progress-track"><div class="progress-fill" style="width:${p.mastered?100:0}%"></div></div><p class="small muted">Read: 5–7 min<br>Retrieve: 3 min<br>Check: 2–5 min</p>${p.best!==undefined?`<p class="small"><strong>Best: ${p.best}/5</strong></p>`:''}</div></aside></div>`;
+}
+function renderDemo(kind){return courseData.demos[kind]||'';}
+function setupDemos(){
+ const logic=()=>{const a=$('#logic-a').checked,b=$('#logic-b').checked;$('#logic-out').textContent=`A AND B: ${a&&b?'True':'False'} · A OR B: ${a||b?'True':'False'} · NOT A: ${!a?'True':'False'}`;};if($('#logic-a')){$('#logic-a').onchange=logic;$('#logic-b').onchange=logic;logic();}
+ const model=()=>{const n=Number($('#model-cost').value);$('#model-cost-label').textContent=n;$('#model-out').textContent=`Profit = 300 − ${n} = ${300-n}`;};if($('#model-cost')){$('#model-cost').oninput=model;model();}
+ const flow=()=>{const el=$('#flow-temperature'),v=el.value;$('#flow-out').textContent=v===''?'Enter a temperature to trace the condition.':`${v} ≥ 30 is ${Number(v)>=30?'True':'False'} · Follow ${Number(v)>=30?'Yes':'No'} · Output: Fan ${Number(v)>=30?'on':'off'}`;};if($('#flow-temperature')){$('#flow-temperature').oninput=flow;flow();}
+ $$('[data-bit]').forEach(b=>b.onclick=()=>{b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');$('strong',b).textContent=b.getAttribute('aria-pressed')==='true'?'1':'0';const bs=$$('[data-bit]');$('#binary-out').textContent=`${bs.map(x=>x.getAttribute('aria-pressed')==='true'?'1':'0').join('')} = ${bs.reduce((t,x)=>t+(x.getAttribute('aria-pressed')==='true'?Number(x.dataset.bit):0),0)} in denary`;});
+}
+// Balanced sampling guarantees concept coverage in micro-checks and lesson coverage in unit/exam checks.
+function sampleMicro(l){const first=l.concepts.map(c=>shuffle(l.questions.filter(q=>q.concept===c.id))[0]).filter(Boolean);return shuffle([...first,...shuffle(l.questions.filter(q=>!first.includes(q))).slice(0,5-first.length)]).map(q=>q.id);}
+function sampleUnit(s,n){const order=shuffle(s.lessons),base=Math.floor(n/order.length),extra=n%order.length;return shuffle(order.flatMap((l,i)=>shuffle(l.questions).slice(0,base+(i<extra?1:0)).map(q=>q.id)));}
+function newRun(kind,id){
+ const key=kind+':'+id;
+ let ids=kind==='lesson'?sampleMicro(lessonMap[id]):sampleUnit(sectionMap[id],10);
+ const prior=state.sessions[key];if(prior&&ids.join('|')===prior.ids.join('|'))ids=ids.slice(1).concat(ids[0]);
+ const run={kind,id,ids,index:0,answers:{},checked:{},orders:{},startedAt:Date.now(),completed:false};
+ ids.forEach(qid=>{if(questions[qid].type==='choice')run.orders[qid]=shuffle(questions[qid].options.map((_,i)=>i));});state.sessions[key]=run;save();return run;
+}
+function quizIntro(kind,id){const isLesson=kind==='lesson',total=isLesson?5:10,p=isLesson?state.lessons[id]:state.sections[id];return `<div class="quiz-top"><div class="eyebrow">${isLesson?'MICRO-FORMATIVE CHECK':'CUMULATIVE UNIT CHECKPOINT'}</div><h2>${isLesson?'Put your understanding to work.':'Bring the unit together.'}</h2><p class="small muted">${total} questions · Instant explanations · ${isLesson?'4/5 (80%) to master this lesson':'75%+ required: with 10 whole-mark questions, you need 8/10'}</p></div><p>${isLesson?'Take a moment to recall the key ideas before answering.':'Questions mix all four lessons in this unit.'} Each question can be checked once per attempt.</p>${p?.best!==undefined?`<p class="small">Best score: <strong>${p.best}/${total}</strong> · Attempts: ${p.attempts.length}</p>`:''}<button class="btn" data-action="start-quiz" data-kind="${kind}" data-id="${id}">${p?.attempts?.length?'Start a shuffled retry':'Start the check'}</button>`;}
+function questionControls(q,run,exam=false){const v=run.answers[q.id],checked=!exam&&run.checked[q.id]!==undefined,order=run.orders[q.id]||q.options?.map((_,i)=>i);const attrs=exam?'data-exam-answer':'data-quiz-answer';if(q.type==='choice')return `<fieldset class="choices"><legend class="visually-hidden">Choose one answer</legend>${order.map(i=>`<label class="choice ${checked?(i===q.correct?'right':Number(v)===i?'wrong':''):''}"><input type="radio" name="answer-${q.id}" value="${i}" ${attrs} ${Number(v)===i&&v!==undefined?'checked':''} ${checked?'disabled':''}><span>${esc(q.options[i])}</span></label>`).join('')}</fieldset>`;return `<label for="typed-answer" class="small">Your answer${q.prompt.includes('eight binary')?' (keep all eight digits)':''}</label><div style="margin:8px 0 20px"><input class="input" id="typed-answer" type="text" ${attrs} value="${esc(v??'')}" autocomplete="off" spellcheck="false" ${checked?'disabled':''} aria-describedby="answer-hint"><p class="help-inline" id="answer-hint">Type the value or output. Do not include code or an explanation.</p></div>`;}
+function renderQuiz(kind,id){
+ const run=state.sessions[kind+':'+id];if(!run)return quizIntro(kind,id);if(run.completed)return renderQuizResult(run);
+ const q=questions[run.ids[run.index]],checked=run.checked[q.id]!==undefined,ok=run.checked[q.id],n=run.ids.length;
+ return `<div class="quiz-top"><div class="row"><span class="eyebrow" style="margin:0">${kind==='lesson'?'LESSON CHECK':'UNIT CHECKPOINT'}</span><span class="pill">${run.index+1} / ${n}</span></div><div class="progress-track"><div class="progress-fill" style="width:${run.index/n*100}%"></div></div><p class="small muted">${kind==='lesson'?'Aim for 4/5.':'Aim for 8/10 (75%+ threshold).'} Answers save as you go.</p></div><div id="quiz-question" data-kind="${kind}" data-id="${id}"><p class="question-title">${esc(q.prompt)}</p>${q.code?`<pre><code class="python">${esc(q.code)}</code></pre>`:''}${questionControls(q,run)}<div class="form-error" id="quiz-error" role="alert"></div>${checked?`<div class="feedback ${ok?'':'incorrect'}" id="answer-feedback" tabindex="-1" role="status"><strong>${ok?'Correct — keep building on that.':'A useful one to revisit.'}</strong>${!ok?`<p>Correct answer: <strong>${esc(expectedText(q))}</strong></p>`:''}<p>${esc(q.explanation)}</p>${!ok?`<p><a href="${lessonURL(q.lessonId,q.concept)}">Review this exact concept</a></p>`:''}</div><button class="btn" data-action="next-question" data-kind="${kind}" data-id="${id}">${run.index===n-1?'See my result':'Next question'}</button>`:`<button class="btn" data-action="check-answer" data-kind="${kind}" data-id="${id}">Check answer</button>`}</div>`;
+}
+function refreshQuiz(kind,id,focus=''){const container=kind==='lesson'?$('#micro-quiz'):$('#section-quiz');if(!container)return;container.innerHTML=renderQuiz(kind,id);highlightCode(container);if(focus){const el=$(focus,container);if(el){el.setAttribute('tabindex','-1');el.focus({preventScroll:true});}}updateChrome();}
+function checkAnswer(kind,id){const run=state.sessions[kind+':'+id],q=questions[run.ids[run.index]];if(run.checked[q.id]!==undefined)return;if(!answered(q,run.answers[q.id])){$('#quiz-error').textContent='Choose or type an answer first.';return;}const ok=correct(q,run.answers[q.id]);run.checked[q.id]=ok;if(ok)state.earned[q.id]=true;save();refreshQuiz(kind,id,'#answer-feedback');}
+function finishQuiz(run){if(run.completed)return;const n=run.ids.length,score=run.ids.filter(id=>run.checked[id]).length,passed=score/n>=(run.kind==='lesson'?.8:.75);run.completed=true;run.score=score;run.passed=passed;run.finishedAt=Date.now();const bucket=run.kind==='lesson'?state.lessons:state.sections;const p=bucket[run.id]??={attempts:[]};p.attempts??=[];p.attempts.push({score,total:n,at:run.finishedAt});p.best=Math.max(p.best??0,score);if(passed)p.mastered=true;if(run.kind==='lesson')p.weak=[...new Set(run.ids.filter(id=>!run.checked[id]).map(id=>questions[id].concept))];save();updateChrome();toast(passed?(run.kind==='lesson'?'Lesson mastered. Your progress is saved.':'Unit badge earned. Your progress is saved.'):'Attempt saved. Review the suggested concepts, then try again.');}
+function nextQuestion(kind,id){const run=state.sessions[kind+':'+id];if(run.checked[run.ids[run.index]]===undefined)return;if(run.index<run.ids.length-1){run.index++;save();refreshQuiz(kind,id,'.question-title');}else{finishQuiz(run);if(kind==='lesson'){const y=window.scrollY;render();window.scrollTo({top:y,behavior:'instant'});$('#micro-quiz').scrollIntoView({block:'start'});}else refreshQuiz(kind,id,'.quiz-result-heading');}}
+function renderQuizResult(run){
+ const bad=run.ids.filter(id=>!run.checked[id]).map(id=>questions[id]),p=run.kind==='lesson'?state.lessons[run.id]:state.sections[run.id],unique=[...new Map(bad.map(q=>[q.lessonId+'/'+q.concept,q])).values()];
+ let next='';if(run.kind==='lesson'){const l=lessonMap[run.id],s=sectionMap[l.sectionId],idx=lessons.findIndex(x=>x.id===l.id);next=unitUnlocked(s.id)?`<a class="btn secondary" href="#section/${s.id}">Open unit checkpoint</a>`:idx<lessons.length-1?`<a class="btn secondary" href="${lessonURL(lessons[idx+1].id)}">Next lesson</a>`:'';}else next='<a class="btn secondary" href="#home">Back to learning path</a>';
+ return `<div class="result-mark ${run.passed?'':'needs'}">${run.score}/${run.ids.length}</div><h2 class="quiz-result-heading">${run.passed?run.kind==='lesson'?'Lesson mastered.':'Mastery badge earned.':'You have a clear next step.'}</h2><p>${run.passed?'Keep explaining the ideas in your own words to make them stick.':`You need ${run.kind==='lesson'?'4/5':'8/10'} to pass. Review the concepts below, then take a shuffled retry.`}</p>${!run.passed&&p?.mastered?'<p class="small muted">Your earlier mastery remains earned. This attempt adds new revision guidance.</p>':''}${unique.length?`<div class="notice"><strong>Focus your revision</strong><ul class="weak-list">${unique.map(q=>`<li><a href="${lessonURL(q.lessonId,q.concept)}">${lessonMap[q.lessonId].title}: ${lessonMap[q.lessonId].concepts.find(c=>c.id===q.concept).title}</a></li>`).join('')}</ul></div>`:'<p class="callout">All answers correct in this attempt.</p>'}<div class="row actions"><button class="btn" data-action="start-quiz" data-kind="${run.kind}" data-id="${run.id}">Try a shuffled quiz</button>${next}</div><details style="margin-top:24px"><summary>Review all ${run.ids.length} answers</summary>${run.ids.map(id=>renderReview(questions[id],run.answers[id],run.checked[id])).join('')}</details>`;
+}
+function renderReview(q,value,ok){return `<details class="review-item"><summary>${ok?'✓':'○'} ${esc(q.prompt)}</summary>${q.code?`<pre><code class="python">${esc(q.code)}</code></pre>`:''}<p>Your answer: <strong>${esc(answerText(q,value))}</strong><br>Correct answer: <strong>${esc(expectedText(q))}</strong></p><p>${esc(q.explanation)}</p><a class="small" href="${lessonURL(q.lessonId,q.concept)}">Revise this concept</a></details>`;}
+function renderSection(id){const s=sectionMap[id],locked=!unitUnlocked(id),p=state.sections[id];return pageHead('UNIT CHECKPOINT',s.title,'Mix the ideas from all four lessons and show what you can apply.')+(locked?`<section class="card"><span class="pill amber">▣ Locked</span><h2 style="margin-top:18px">Master the lessons to unlock this check.</h2><p>Earn at least 4/5 in each lesson’s micro-check first.</p><ul class="unit-list" style="padding:0">${s.lessons.map(l=>`<li><a class="lesson-link" href="${lessonURL(l.id)}">${statusCircle(state.lessons[l.id])}${l.title}</a></li>`).join('')}</ul></section>`:`<section class="card quiz-block" id="section-quiz">${renderQuiz('section',id)}</section>`);}
+function buildExam(){
+ const order=shuffle(sections),base=Math.floor(25/sections.length),extra=25%sections.length,allocation={};
+ const ids=shuffle(order.flatMap((s,i)=>{allocation[s.id]=base+(i<extra?1:0);return sampleUnit(s,allocation[s.id]);}));
+ const e={id:'exam-'+Date.now(),ids,answers:{},orders:{},flags:{},index:0,startedAt:Date.now(),deadline:Date.now()+courseData.examMinutes*60000,allocation};
+ ids.forEach(id=>{if(questions[id].type==='choice')e.orders[id]=shuffle(questions[id].options.map((_,i)=>i));});state.exam=e;save();nav('#exam');
+}
+function renderExam(){
+ const e=state.exam;
+ if(!e)return pageHead('COMPREHENSIVE MOCK EXAM','Your practice run starts here.','Put your understanding to work across all four units.')+`<div class="grid two-col"><section class="card"><span class="pill blue">25 QUESTIONS · 45 MINUTES</span><h2 style="margin-top:18px">One focused attempt.</h2><ul><li>All 16 lessons are represented.</li><li>Each of the four equal-sized units contributes 6 questions; one randomly chosen unit contributes a seventh.</li><li>One mark per question. Unanswered questions score zero.</li><li>Feedback appears after submission.</li><li>You can move between questions and flag ones to revisit.</li></ul><div class="notice">The timer keeps running if you leave this page or close the browser. When time expires, the attempt submits automatically, or on reopening if the app was closed.</div><p class="small muted">This practice format uses 25 questions in 45 minutes as requested. The supplied school papers use a different length and mark allocation.</p><button class="btn" data-action="start-exam">Start 45-minute mock</button></section><section class="card"><h2>Make it count.</h2><p>Try this without the lesson notes. Your report will show both unit scores and links to the precise concepts to revise.</p><div class="callout">You can use the mock at any point. You do not need every badge to begin.</div><h3>Previous attempts</h3>${state.examHistory.length?state.examHistory.slice().reverse().map(h=>`<div class="history-row"><span><strong>${h.percent}%</strong><br><span class="small muted">${stamp(h.finishedAt)}</span></span><a href="#report/${h.id}">View report</a></div>`).join(''):'<p class="small muted">Your first report will appear here.</p>'}</section></div>`;
+ const q=questions[e.ids[e.index]],done=e.ids.filter(id=>answered(questions[id],e.answers[id])).length;
+ return `${pageHead('MOCK EXAM IN PROGRESS','Take it one question at a time.','Your answers save automatically. Results and explanations unlock when you submit.')}<div class="exam-shell"><section class="card" id="exam-question"><div class="row"><span class="pill blue">Question ${e.index+1} of 25</span><button class="btn secondary flag" data-action="flag-exam" aria-pressed="${!!e.flags[q.id]}">${e.flags[q.id]?'Flagged for review':'Flag for review'}</button></div><p class="question-title">${esc(q.prompt)}</p>${q.code?`<pre><code class="python">${esc(q.code)}</code></pre>`:''}${questionControls(q,e,true)}<div class="row actions"><button class="btn secondary" data-action="exam-prev" ${e.index===0?'disabled':''}>Previous</button><button class="btn" data-action="exam-next" ${e.index===24?'disabled':''}>Next question</button></div><p class="save-status" id="exam-save" role="status">Saved in this browser</p></section><aside class="exam-nav"><div class="card"><div class="timer-row"><div><span class="small muted">Time remaining</span><div class="timer" data-time></div></div><span class="small" id="exam-count">${done}/25 answered</span></div><div class="number-grid" aria-label="Jump to a question">${e.ids.map((id,i)=>`<button class="number-btn ${answered(questions[id],e.answers[id])?'answered':''} ${e.index===i?'current':''} ${e.flags[id]?'flagged':''}" data-action="exam-jump" data-index="${i}" aria-label="Question ${i+1}${answered(questions[id],e.answers[id])?', answered':', unanswered'}${e.flags[id]?', flagged':''}" ${e.index===i?'aria-current="step"':''}>${i+1}</button>`).join('')}</div><p class="small muted">Green: answered<br>Amber underline: flagged</p><button class="btn sticky-submit" data-action="submit-exam" style="width:100%">Submit exam</button><button class="btn quiet" data-action="abandon-exam">Discard this attempt</button></div></aside></div>`;
+}
+function updateExamAnswer(value){if(!state.exam)return;if(Date.now()>=state.exam.deadline){finishExam(true);return;}const e=state.exam,q=questions[e.ids[e.index]];e.answers[q.id]=value;save();const count=e.ids.filter(id=>answered(questions[id],e.answers[id])).length;if($('#exam-count'))$('#exam-count').textContent=`${count}/25 answered`;const b=$(`[data-action="exam-jump"][data-index="${e.index}"]`);if(b){b.classList.toggle('answered',answered(q,value));b.setAttribute('aria-label',`Question ${e.index+1}, ${answered(q,value)?'answered':'unanswered'}${e.flags[q.id]?', flagged':''}`);}if($('#exam-save'))$('#exam-save').textContent=storageWarning?'Could not save to browser storage':'Saved in this browser';}
+function finishExam(timedOut=false){
+ const e=state.exam;if(!e)return;
+ if($('#confirm-dialog').open)closeDialog();
+ const checked=Object.fromEntries(e.ids.map(id=>[id,correct(questions[id],e.answers[id])]));
+ const score=Object.values(checked).filter(Boolean).length;
+ e.ids.filter(id=>checked[id]).forEach(id=>state.earned[id]=true);
+ const report={...e,checked,score,percent:pct(score,25),finishedAt:Date.now(),timedOut};
+ state.examHistory.push(report);state.exam=null;save();
+ toast(timedOut?'Time is up. Your answers have been submitted.':'Mock submitted. Your readiness report is ready.');
+ nav('#report/'+report.id);
+}
+function updateTimerText(){if(!state.exam)return;const left=Math.max(0,Math.ceil((state.exam.deadline-Date.now())/1000)),text=`${String(Math.floor(left/60)).padStart(2,'0')}:${String(left%60).padStart(2,'0')}`;$$('[data-time],[data-time-inline]').forEach(el=>{el.textContent=text;el.classList.toggle('low',left<=300);});}
+function timerTick(){if(state.exam){if(Date.now()>=state.exam.deadline)finishExam(true);else updateTimerText();}}
+function renderReport(id){
+ const h=state.examHistory.find(h=>h.id===id)||state.examHistory.at(-1);if(!h)return pageHead('EXAM READINESS','No completed mock yet.','Take a mock exam to build your topic report.')+'<a class="btn" href="#exam">Open mock exam</a>';
+ const topics=lessons.map(l=>{const ids=h.ids.filter(id=>questions[id].lessonId===l.id);return {l,total:ids.length,score:ids.filter(id=>h.checked[id]).length,ids};});
+ const missed=h.ids.filter(id=>!h.checked[id]).map(id=>questions[id]);const unique=[...new Map(missed.map(q=>[q.lessonId+'/'+q.concept,q])).values()];
+ return pageHead('EXAM READINESS REPORT','Know what to revise next.',`${stamp(h.finishedAt)} · ${h.timedOut?'Submitted when time expired':'Submitted by you'}`)+`<section class="card report-hero"><div><div class="report-score">${h.percent}%</div><p class="muted">${h.score} of 25 correct</p></div><div><span class="pill ${h.percent>=80?'green':'amber'}">${h.percent>=80?'Strong performance':h.percent>=60?'Building confidence':'Focus your next session'}</span><h2 style="margin-top:14px">${h.percent>=80?'A strong foundation to build on.':'Your next revision steps are clear.'}</h2><p class="muted">${h.percent>=80?'Revisit any missed concepts, then explain them without the notes.':'Use the links below to review the concepts that cost marks. Retake their lesson checks before another mock.'} This small practice sample is guidance, not a guaranteed exam grade.</p></div></section><section class="card" style="margin-top:22px"><h2>Unit breakdown</h2>${sections.map(s=>{const ids=h.ids.filter(id=>questions[id].sectionId===s.id),score=ids.filter(id=>h.checked[id]).length,p=pct(score,ids.length);return `<div class="topic-row"><strong>${s.title}</strong><span>${score}/${ids.length} · ${p}%</span><span class="pill ${p>=80?'green':'amber'}">${resultLabel(p)}</span></div>`;}).join('')}<p class="help-inline">Strong: 80%+ · Developing: 60–79% · Review next: below 60%.</p></section><section class="card report-topics"><h2>Every lesson, at a glance</h2><p class="small muted">Each lesson has only 1–2 questions in this attempt, so use this alongside your lesson-check results.</p>${topics.map(t=>`<div class="topic-row"><a href="${lessonURL(t.l.id)}">${t.l.title}</a><span>${t.score}/${t.total}</span><span class="pill ${t.score===t.total?'green':'amber'}">${t.score===t.total?'Strong':'Review'}</span></div>`).join('')}</section><section class="card" style="margin-top:22px"><h2>${unique.length?'Your targeted revision list':'All concepts answered correctly'}</h2>${unique.length?`<ol>${unique.map(q=>`<li style="margin:12px 0"><a href="${lessonURL(q.lessonId,q.concept)}">${lessonMap[q.lessonId].title}: ${lessonMap[q.lessonId].concepts.find(c=>c.id===q.concept).title}</a><div class="small muted">${esc(q.explanation)}</div></li>`).join('')}</ol>`:'<p>Maintain your understanding by explaining the ideas aloud and taking another shuffled practice run later.</p>'}<div class="row actions"><a class="btn" href="${unique.length?lessonURL(unique[0].lessonId,unique[0].concept):'#home'}">${unique.length?'Start targeted revision':'Return to learning path'}</a><a class="btn secondary" href="#exam">Mock exam centre</a></div></section><section class="card" style="margin-top:22px"><h2>Answer review</h2><p class="small muted">Open any question for your answer, the correct answer and an explanation.</p>${h.ids.map(id=>renderReview(questions[id],h.answers[id],h.checked[id])).join('')}</section>`;
+}
+function renderProgress(){const c=counts();return pageHead('MY PROGRESS','Small steps add up.','Mastery is based on your best qualifying attempt. Every retry is another chance to understand.')+`<div class="stat-grid"><div class="card"><span class="small muted">Experience points</span><div class="stat-value">${state.xp} XP</div><p class="small muted">New answers + first-time mastery</p></div><div class="card"><span class="small muted">Course completion</span><div class="stat-value">${c.completion}%</div><p class="small muted">${c.done} lessons + ${c.badges} checkpoints mastered</p></div><div class="card"><span class="small muted">Completed mock exams</span><div class="stat-value">${state.examHistory.length}</div><p class="small muted">Best score: ${state.examHistory.length?Math.max(...state.examHistory.map(h=>h.percent))+'%':'Not taken yet'}</p></div></div><div class="badges">${sections.map(s=>`<section class="card badge-card ${state.sections[s.id]?.mastered?'earned':''}"><div class="badge-icon" aria-hidden="true">${state.sections[s.id]?.mastered?'✦':s.icon}</div><h3>${s.title}</h3><p>${state.sections[s.id]?.mastered?'Mastery badge earned':'Master 4 lessons, then score 8/10'}</p><a class="small" href="#section/${s.id}">${state.sections[s.id]?.mastered?'Revisit checkpoint':'View checkpoint'}</a></section>`).join('')}</div><section class="card" style="margin-top:24px"><h2>Lesson results</h2><div class="table-wrap"><table><thead><tr><th>Lesson</th><th>Status</th><th>Best</th><th>Attempts</th></tr></thead><tbody>${lessons.map(l=>{const p=state.lessons[l.id];return `<tr><td><a href="${lessonURL(l.id)}">${l.title}</a></td><td>${p?.mastered?'Mastered':p?.visited?'In progress':'Ready'}</td><td>${p?.best!==undefined?p.best+'/5':'—'}</td><td>${p?.attempts?.length||0}</td></tr>`;}).join('')}</tbody></table></div></section><section class="card" style="margin-top:24px"><h2>How points and completion work</h2><ul><li>5 XP for the first correct answer to each unique question.</li><li>40 XP when you first master a lesson.</li><li>100 XP when you first earn each unit badge.</li><li>100 XP for completing your first mock exam.</li></ul><p class="small muted">Retries do not repeatedly award the same points. Completion counts 16 lessons and 4 unit checkpoints equally. The mock is a separate readiness check.</p></section>`;}
+function renderSettings(){return pageHead('SETTINGS & SOURCES','Make this space work for you.','One offline file. Progress saved in your current browser.')+`<section class="card settings-block"><div class="row wrap"><div><h2>Appearance</h2><p class="muted">Choose the theme you find easiest to read.</p></div><button class="btn secondary" data-action="theme">Use ${state.theme==='light'?'dark':'light'} mode</button></div></section><section class="card settings-block"><h2>Progress and privacy</h2><p>Answers, quiz scores, badges, XP and the active mock timer save automatically using localStorage. Nothing is sent to a server.</p><p class="small muted">Use the same browser and file location to keep your progress. Private browsing, clearing site data, moving the file or using another device may make your saved progress unavailable. Local-file storage support varies by browser.</p><div class="row wrap"><button class="btn secondary" data-action="reset">Reset Progress</button><span class="small muted">Clears this app’s progress, scores and active exam.</span></div></section><section class="card settings-block"><h2>Curriculum scope</h2><p>${esc(courseData.scope)}</p><h3>Supplied files</h3><ol class="source-list">${courseData.sources.map(s=>`<li>${esc(s)}</li>`).join('')}</ol><p class="small muted">The supplied files are labelled Grade 6 and use Stage 7 objective codes. Additional test-data labels from the revision guide are identified as further reading because the exam schemes exclude that terminology. Quiz wording avoids ambiguous or malformed source questions.</p></section>`;}
+function highlightCode(root=document){$$('code.python',root).forEach(el=>{if(el.dataset.highlighted)return;const raw=el.textContent;const rx=/(#[^\n]*|"[^"\n]*"|'[^'\n]*'|\b(?:if|elif|else|and|or|not|True|False)\b|\b(?:print|input|int|float)\b|\b\d+(?:\.\d+)?\b)/g;let at=0,out='',m;while((m=rx.exec(raw))){out+=esc(raw.slice(at,m.index));const v=m[0],type=v.startsWith('#')?'comment':/^["']/.test(v)?'str':/^\d/.test(v)?'num':/^(print|input|int|float)$/.test(v)?'fn':'key';out+=`<span class="tok-${type}">${esc(v)}</span>`;at=rx.lastIndex;}out+=esc(raw.slice(at));el.innerHTML=out;el.dataset.highlighted='true';});}
+function syncMenu(){const mobile=matchMedia('(max-width: 900px)').matches;const open=mobile?document.body.classList.contains('nav-open'):!document.body.classList.contains('sidebar-hidden');$('#menu-btn').setAttribute('aria-expanded',open);$('#sidebar').inert=!open;}
+$('#menu-btn').onclick=()=>{if(matchMedia('(max-width: 900px)').matches)document.body.classList.toggle('nav-open');else document.body.classList.toggle('sidebar-hidden');syncMenu();};
+$('#overlay').onclick=()=>{document.body.classList.remove('nav-open');syncMenu();};
+function toggleTheme(){state.theme=state.theme==='light'?'dark':'light';save();updateChrome();if(getRoute().type==='settings')render();}
+$('#theme-btn').onclick=toggleTheme;
+$('#dialog-cancel').onclick=closeDialog;
+$('#dialog-confirm').onclick=()=>{const fn=confirmAction;closeDialog();fn?.();};
+$('#confirm-dialog').addEventListener('cancel',()=>{confirmAction=null;});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.body.classList.remove('nav-open');syncMenu();}if(e.key==='Enter'&&e.target.matches('[data-quiz-answer]')&&e.target.type==='text'){const el=$('#quiz-question');checkAnswer(el.dataset.kind,el.dataset.id);}});
+document.addEventListener('input',e=>{if(e.target.matches('[data-quiz-answer]')){const el=$('#quiz-question'),run=state.sessions[el.dataset.kind+':'+el.dataset.id];if(run.checked[run.ids[run.index]]===undefined){run.answers[run.ids[run.index]]=e.target.type==='radio'?Number(e.target.value):e.target.value;save();}}if(e.target.matches('[data-exam-answer]'))updateExamAnswer(e.target.type==='radio'?Number(e.target.value):e.target.value);});
+document.addEventListener('click',e=>{
+ const scroll=e.target.closest('[data-scroll-quiz]');if(scroll){e.preventDefault();$('#micro-quiz')?.scrollIntoView({block:'start'});return;}
+ const b=e.target.closest('[data-action]');if(!b)return;const a=b.dataset.action,kind=b.dataset.kind,id=b.dataset.id;
+ if(a==='start-quiz'){if(kind==='section'&&!unitUnlocked(id)){nav('#section/'+id);return;}newRun(kind,id);refreshQuiz(kind,id,'.question-title');}
+ else if(a==='check-answer')checkAnswer(kind,id);
+ else if(a==='next-question')nextQuestion(kind,id);
+ else if(a==='theme')toggleTheme();
+ else if(a==='start-exam')buildExam();
+ else if(a==='submit-exam'&&state.exam){const n=state.exam.ids.filter(id=>!answered(questions[id],state.exam.answers[id])).length;confirm('Submit this mock exam?',`${n?n+' unanswered '+(n===1?'question will':'questions will')+' score zero. ':'All questions have an answer. '}Submission ends this attempt and reveals your readiness report.`,'Submit exam',()=>finishExam(false));}
+ else if(a==='abandon-exam')confirm('Discard this attempt?','This removes the active exam and its answers. Your completed exam reports and lesson progress stay saved.','Discard attempt',()=>{state.exam=null;save();render();});
+ else if(a==='reset')confirm('Reset all progress?','This permanently clears lesson scores, XP, badges, exam reports and any active mock in this browser. Your colour theme is kept.','Reset Progress',()=>{state=freshState(state.theme);storageWarning='';save();nav('#home');toast('Progress reset. Your next learning path starts here.');});
+ else if(['exam-prev','exam-next','exam-jump','flag-exam'].includes(a)&&state.exam){if(Date.now()>=state.exam.deadline){finishExam(true);return;}if(a==='flag-exam'){const qid=state.exam.ids[state.exam.index];state.exam.flags[qid]=!state.exam.flags[qid];}else state.exam.index=a==='exam-prev'?Math.max(0,state.exam.index-1):a==='exam-next'?Math.min(24,state.exam.index+1):Number(b.dataset.index);save();const y=window.scrollY;render();window.scrollTo({top:y,behavior:'instant'});$('.question-title')?.setAttribute('tabindex','-1');$('.question-title')?.focus({preventScroll:true});}
+});
+window.addEventListener('hashchange',()=>{if(location.hash==='#main'){$('#main').focus();return;}render();});
+window.addEventListener('resize',syncMenu);
+document.addEventListener('visibilitychange',timerTick);
+window.addEventListener('pageshow',timerTick);
+window.addEventListener('storage',e=>{if(e.key===STORAGE_KEY){state=readState();recomputeXP();render(true);toast('Progress updated from another open tab.');}});
+setInterval(timerTick,1000);
+recomputeXP();
+render();
+
+</script>
+</body>
+</html>
